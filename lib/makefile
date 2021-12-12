@@ -36,19 +36,34 @@
 ##
 
 # Software.
+ARCHIVE	:= ar
+CC		:= g++
 COPY	:= cp
+DOXYGEN	:= doxygen
+NEWDIR	:= mkdir
 REMOVE	:= rm
 
+# Software flags.
+AFLAGS	:= rs
+CFLAGS	:= -std=c++11 -Wall -Werror -Wextra -Wpedantic -D__ELLIPSE_INTERNAL__
+LFLAGS	:= -lm
+
 # Make directories.
-MDOCS	:= -C ./.docs/
-MLIB	:= -C ./lib/
+MDOX	:= -C ../.docs/latex/
 
 # Directories.
-DOXDIR	:= ./.docs/html/ ./.docs/latex/
+LIBDIR	:= ../../lib/
+DIRS	:= $(LIBDIR)
+
+# Library compilation requirements.
+HEADERS	:= $(wildcard ./*.hpp)
+LIBRARY	:= ./libellipse.a
+SOURCE	:= $(wildcard ./*.cpp)
+OBJECTS	:= $(subst .cpp,.o, $(SOURCE))
 
 # Concrete files.
-PDF		:= ./.docs/documentation.pdf
-REFMAN	:= ./.docs/latex/refman.pdf
+DOXYFILE	:= ./doxygen.cfg
+SELF		:= ./makefile
 
 
 
@@ -60,31 +75,30 @@ REFMAN	:= ./.docs/latex/refman.pdf
 
 .PHONY: default doxygen library manual pdf submodule tidy
 
-default: submodule
+.PHONY: default doxygen library submodule tidy
 
-doxygen: $(REFMAN)
+default: library
 
-library:
-	make $(MLIB) default
+$(DIRS):
+	$(NEWDIR) $@
 
-manual: $(PDF) $(REFMAN)
-	$(COPY) $(PDF) ./orvaenting.pdf
-	$(COPY) $(REFMAN) ./liborvaenting.pdf
+doxygen: $(HEADERS) $(SOURCE)
+	$(DOXYGEN) $(DOXYFILE)
+	make $(MDOX) all
 
-pdf: $(PDF)
+library: $(LIBRARY)
 
-$(PDF):
-	make $(MDOCS) default
+$(LIBRARY): $(OBJECTS)
+	$(ARCHIVE) $(AFLAGS) $@ $^
 
-$(REFMAN):
-	make $(MLIB) doxygen
+$(OBJECTS): $(SOURCE)
+	$(CC) $(CFLAGS) -c $(LFLAGS) $^
 
-submodule:
-	make $(MLIB) submodule
+submodule: $(HEADERS) $(LIBRARY) $(LIBDIR)
+	$(COPY) $(HEADERS) $(LIBRARY) $(LIBDIR)
+	make tidy
 
-tidy: $(REFMAN)
-	$(REMOVE) $(DOXDIR) $(wildcard ./*.pdf) -rf
-	make $(MDOCS) tidy
-	make $(MLIB) tidy
+tidy: $(LIBRARY) $(OBJECTS)
+	$(REMOVE) $^
 
 ################################################################################

@@ -30,6 +30,55 @@
 
 /******************************************************************************/
 
+/*! \class  Ellipse
+ *
+ * \brief   A simple ellipse class.
+ */
 
+
+
+/*! \def    __ELLIPSE_HPP__
+ *
+ * \brief   Ensuring this header being included just once.
+ */
+
+
+
+ /*! \fn    Ellipse :: Ellipse  ( const float r
+  *                             , const float e
+  *                             , const float cx
+  *                             , const float cy
+  *                             , const float cz
+  *                             , const float tx
+  *                             , const float ty
+  *                             , const float tz
+  *                             , const float nx
+  *                             , const float ny
+  *                             , const float nz
+  *                             )
+  *
+  * \brief  Construct a new ellipse from the given data.
+  *
+  * \param  r   This ellipse's radius.
+  * \param  e   This ellipse's excentricity.
+  * \param  cx  This ellipse's centre's x coordinate.
+  * \param  cy  This ellipse's centre's y coordinate.
+  * \param  cz  This ellipse's centre's z coordinate.
+  * \param  tx  This ellipse's tangent's x component.
+  * \param  ty  This ellipse's tangent's y component.
+  * \param  tz  This ellipse's tangent's z component.
+  * \param  nx  This ellipse's normal's x component.
+  * \param  ny  This ellipse's normal's y component.
+  * \param  nz  This ellipse's normal's z component.
+  */
+
+/*! \fn     vector <float> Ellipse :: eval (const float t)
+ *
+ * \brief   Evaluate this ellipse for a given point of time.
+ *
+ * \param   t   The point of time to evaluate this ellipse for.
+ *
+ * \return  The curve point for the considered point of time.
+ */
 
 /******************************************************************************/

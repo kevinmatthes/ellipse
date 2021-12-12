@@ -82,7 +82,7 @@ default: library
 $(DIRS):
 	$(NEWDIR) $@
 
-doxygen: $(HEADERS) $(SOURCE)
+doxygen: $(wildcard ./*.dox) $(HEADERS) $(SOURCE)
 	$(DOXYGEN) $(DOXYFILE)
 	make $(MDOX) all
 

@@ -17,8 +17,8 @@
  */
 
 /**
- * \file    ellipse.hpp
- * \brief   Introducing the `Ellipse' class.
+ * \file    ellipse.cpp
+ * \brief   Defining the `Ellipse' class.
  *
  * \author      Kevin Matthes
  * \copyright   (C) 2021 Kevin Matthes.
@@ -31,25 +31,10 @@
 /******************************************************************************/
 
 /*
- * Security settings.
- */
-
-#pragma once
-#ifndef __ELLIPSE_HPP__
-#define __ELLIPSE_HPP__
-
-
-
-/*
  * Includes.
  */
 
-#include <functional>
-#include <math>
-
-using std::cosf;
-using std::function;
-using std::sinf;
+#include "ellipse.hpp"
 
 
 
@@ -57,72 +42,42 @@ using std::sinf;
  * Class definition.
  */
 
-class Ellipse
+Ellipse :: Ellipse  ( const float r     = 0.f
+                    , const float e     = 0.f
+                    , const float cx    = 0.f
+                    , const float cy    = 0.f
+                    , const float cz    = 0.f
+                    , const float tx    = 0.f
+                    , const float ty    = 0.f
+                    , const float tz    = 0.f
+                    , const float nx    = 0.f
+                    , const float ny    = 0.f
+                    , const float nz    = 0.f
+                    )
 {
-    private:
-        float   major   {0.};
-        float   minor   {0.};
+    this -> major   = r + e;
+    this -> minor   = r;
 
-        function <float (const float)>  x
-            {[] (const float t) -> float {return major * cosf (t);};};
+    const float bx  {ty * nz - tz * ny};
+    const float by  {tz * nx - tx * nz};
+    const float bz  {tx * ny - ty * nx};
 
-        function <float (const float)>  y
-            {[] (const float t) -> float {return minor * sinf (t);};};
+    const float cx_ {cx + e};
+    const float cy_ {cy + e};
+    const float cz_ {cz + e};
 
-        function <float (const float)>  z
-            {[] (const float t) -> float {return 0.f * t;};};
+    return;
+}
 
-    public:
-        Ellipse ( const float r     = 0.f
-                , const float e     = 0.f
-                , const float cx    = 0.f
-                , const float cy    = 0.f
-                , const float cz    = 0.f
-                , const float tx    = 0.f
-                , const float ty    = 0.f
-                , const float tz    = 0.f
-                , const float nx    = 0.f
-                , const float ny    = 0.f
-                , const float nz    = 0.f
-                )
-        {
-            this -> major   = r + e;
-            this -> minor   = r;
+vector <float> Ellipse :: eval (const float t = 0.f)
+{
+    vector <float>  ret {};
 
-            const float bx  {ty * nz - tz * ny};
-            const float by  {tz * nx - tx * nz};
-            const float bz  {tx * ny - ty * nx};
+    ret.push_back (this -> x (t));
+    ret.push_back (this -> y (t));
+    ret.push_back (this -> z (t));
 
-            const float cx_ {cx + e};
-            const float cy_ {cy + e};
-            const float cz_ {cz + e};
-
-            return;
-        };
-
-        vector <float> eval (const float t)
-        {
-            vector <float>  ret {};
-
-            ret.push_back (this -> x (t));
-            ret.push_back (this -> y (t));
-            ret.push_back (this -> z (t));
-
-            return ret;
-        };
-};
-
-
-
-/*
- * End of header.
- */
-
-// Tidying up.
-#ifndef __ELLIPSE_INTERNAL__
-#endif  // ! __ELLIPSE_INTERNAL__
-
-// Leaving the header.
-#endif  // ! __ELLIPSE_HPP__
+    return ret;
+}
 
 /******************************************************************************/

@@ -84,32 +84,9 @@ class Ellipse
                 , const float nx    = 0.f
                 , const float ny    = 0.f
                 , const float nz    = 0.f
-                )
-        {
-            this -> major   = r + e;
-            this -> minor   = r;
+                );
 
-            const float bx  {ty * nz - tz * ny};
-            const float by  {tz * nx - tx * nz};
-            const float bz  {tx * ny - ty * nx};
-
-            const float cx_ {cx + e};
-            const float cy_ {cy + e};
-            const float cz_ {cz + e};
-
-            return;
-        };
-
-        vector <float> eval (const float t)
-        {
-            vector <float>  ret {};
-
-            ret.push_back (this -> x (t));
-            ret.push_back (this -> y (t));
-            ret.push_back (this -> z (t));
-
-            return ret;
-        };
+        vector <float> eval (const float t = 0.f);
 };
 
 

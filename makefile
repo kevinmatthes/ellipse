@@ -40,11 +40,14 @@ COPY	:= cp
 
 # Make directories.
 MDOCS	:= -C ./.docs/
-MLEX	:= -C ./lex/
+MLIB	:= -C ./lib/
+
+# Directories.
+DOXDIR	:= ./.docs/html/ ./.docs/latex/
 
 # Concrete files.
-CONTRIBUTING	:= ./CONTRIBUTING.md
-LICENSE			:= ./LICENSE
+PDF		:= ./.docs/documentation.pdf
+REFMAN	:= ./.docs/latex/refman.pdf
 
 
 
@@ -54,34 +57,33 @@ LICENSE			:= ./LICENSE
 #
 ##
 
-.PHONY: default install lexers license pdf software submodule tidy uninstall
+.PHONY: default doxygen library manual pdf submodule tidy
 
 default: submodule
 
-install:
-	make $(MLEX) install
+doxygen: $(REFMAN)
 
-lexers:
-	make $(MLEX) lexers
+library:
+	make $(MLIB) default
 
-license: $(LICENSE)
-	$(COPY) $^ ../
+manual: $(PDF) $(REFMAN)
+	$(COPY) $(PDF) ./orvaenting.pdf
+	$(COPY) $(REFMAN) ./liborvaenting.pdf
 
-pdf:
+pdf: $(PDF)
+
+$(PDF):
 	make $(MDOCS) default
 
-software:
-	make $(MDOCS) software
+$(REFMAN):
+	make $(MLIB) doxygen
 
-submodule: $(CONTRIBUTING)
-	$(COPY) $(CONTRIBUTING) ../
-	make $(MDOCS) submodule
+submodule:
+	make $(MLIB) submodule
 
-tidy:
+tidy: $(REFMAN)
+	$(REMOVE) $(DOXDIR) $(wildcard ./*.pdf) -rf
 	make $(MDOCS) tidy
-	make $(MLEX) tidy
-
-uninstall:
-	make $(MLEX) uninstall
+	make $(MLIB) tidy
 
 ################################################################################

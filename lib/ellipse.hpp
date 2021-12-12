@@ -48,7 +48,7 @@
 #include <math>
 
 using std::cosf;
-using std::function <>;
+using std::function;
 using std::sinf;
 
 
@@ -89,15 +89,26 @@ class Ellipse
             this -> major   = r + e;
             this -> minor   = r;
 
-            const float bx  = ty * nz - tz * ny;
-            const float by  = tz * nx - tx * nz;
-            const float bz  = tx * ny - ty * nx;
+            const float bx  {ty * nz - tz * ny};
+            const float by  {tz * nx - tx * nz};
+            const float bz  {tx * ny - ty * nx};
 
-            const float cx_ = cx + e;
-            const float cy_ = cy + e;
-            const float cz_ = cz + e;
+            const float cx_ {cx + e};
+            const float cy_ {cy + e};
+            const float cz_ {cz + e};
 
             return;
+        };
+
+        vector <float> eval (const float t)
+        {
+            vector <float>  ret {};
+
+            ret.push_back (this -> x (t));
+            ret.push_back (this -> y (t));
+            ret.push_back (this -> z (t));
+
+            return ret;
         };
 };
 

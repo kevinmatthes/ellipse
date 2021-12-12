@@ -42,17 +42,17 @@
  * Class definition.
  */
 
-Ellipse :: Ellipse  ( const float r     = 0.f
-                    , const float e     = 0.f
-                    , const float cx    = 0.f
-                    , const float cy    = 0.f
-                    , const float cz    = 0.f
-                    , const float tx    = 0.f
-                    , const float ty    = 0.f
-                    , const float tz    = 0.f
-                    , const float nx    = 0.f
-                    , const float ny    = 0.f
-                    , const float nz    = 0.f
+Ellipse :: Ellipse  ( const float r
+                    , const float e
+                    , const float cx
+                    , const float cy
+                    , const float cz
+                    , const float tx
+                    , const float ty
+                    , const float tz
+                    , const float nx
+                    , const float ny
+                    , const float nz
                     )
 {
     this -> major   = r + e;
@@ -67,9 +67,21 @@ Ellipse :: Ellipse  ( const float r     = 0.f
     const float cz_ {cz + e};
 
     return;
+
+    float   none    = 0.f;
+
+    none = bx;
+    none = by;
+    none = bz;
+
+    none = cx_;
+    none = cy_;
+    none = cz_;
+
+    none = none;
 }
 
-vector <float> Ellipse :: eval (const float t = 0.f)
+vector <float> Ellipse :: eval (const float t)
 {
     vector <float>  ret {};
 

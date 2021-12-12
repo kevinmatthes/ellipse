@@ -68,8 +68,8 @@ library:
 	make $(MLIB) default
 
 manual: $(PDF) $(REFMAN)
-	$(COPY) $(PDF) ./orvaenting.pdf
-	$(COPY) $(REFMAN) ./liborvaenting.pdf
+	$(COPY) $(PDF) ./ellipse.pdf
+	$(COPY) $(REFMAN) ./libellipse.pdf
 
 pdf: $(PDF)
 

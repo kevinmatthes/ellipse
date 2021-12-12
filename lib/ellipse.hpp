@@ -44,12 +44,14 @@
  * Includes.
  */
 
+#include <cmath>
 #include <functional>
-#include <math>
+#include <vector>
 
-using std::cosf;
-using std::function;
-using std::sinf;
+using std :: cos;
+using std :: function;
+using std :: sin;
+using std :: vector;
 
 
 
@@ -64,29 +66,29 @@ class Ellipse
         float   minor   {0.};
 
         function <float (const float)>  x
-            {[] (const float t) -> float {return major * cosf (t);};};
+            {[] (const float t) -> float {return cos (t);}};
 
         function <float (const float)>  y
-            {[] (const float t) -> float {return minor * sinf (t);};};
+            {[] (const float t) -> float {return sin (t);}};
 
         function <float (const float)>  z
-            {[] (const float t) -> float {return 0.f * t;};};
+            {[] (const float t) -> float {return 0.f * t;}};
 
     public:
-        Ellipse ( const float r     = 0.f
-                , const float e     = 0.f
-                , const float cx    = 0.f
-                , const float cy    = 0.f
-                , const float cz    = 0.f
-                , const float tx    = 0.f
-                , const float ty    = 0.f
-                , const float tz    = 0.f
-                , const float nx    = 0.f
-                , const float ny    = 0.f
-                , const float nz    = 0.f
+        Ellipse ( const float r
+                , const float e
+                , const float cx
+                , const float cy
+                , const float cz
+                , const float tx
+                , const float ty
+                , const float tz
+                , const float nx
+                , const float ny
+                , const float nz
                 );
 
-        vector <float> eval (const float t = 0.f);
+        vector <float> eval (const float t);
 };
 
 

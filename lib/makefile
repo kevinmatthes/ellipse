@@ -73,8 +73,6 @@ SELF		:= ./makefile
 #
 ##
 
-.PHONY: default doxygen library manual pdf submodule tidy
-
 .PHONY: default doxygen library submodule tidy
 
 default: library

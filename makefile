@@ -37,6 +37,7 @@
 
 # Software.
 COPY	:= cp
+REMOVE	:= rm
 
 # Make directories.
 MDOCS	:= -C ./.docs/

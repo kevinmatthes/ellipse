@@ -53,6 +53,7 @@ using std :: acos;
 using std :: cos;
 using std :: function;
 using std :: sin;
+using std :: sqrt;
 using std :: vector;
 
 

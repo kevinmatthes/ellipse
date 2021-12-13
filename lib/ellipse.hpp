@@ -69,13 +69,13 @@ class Ellipse
         float   minor   {0.};
 
         function <float (const float)>  x
-            {[] (const float t) -> float {return cos (t);}};
+            {[=] (const float t) -> float {return cos (t);}};
 
         function <float (const float)>  y
-            {[] (const float t) -> float {return sin (t);}};
+            {[=] (const float t) -> float {return sin (t);}};
 
         function <float (const float)>  z
-            {[] (const float t) -> float {return 0.f * t;}};
+            {[=] (const float t) -> float {return 0.f * t;}};
 
     public:
         Ellipse ( const float r

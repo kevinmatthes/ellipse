@@ -90,6 +90,16 @@ features:
 
 
 
+## `mingw-w64`
+
+In order to compile a working Windows version of this repository, this software
+package is required.  The recommended software substitutes from this package
+for the here named applications carry the prefix `x86_64-w64-mingw32-`.
+
+Altering is not recommended.
+
+
+
 ## `mkdir` (`NEWDIR`)
 
 The default UNIX utility in order to create new directories ensures mandatory

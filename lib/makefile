@@ -37,7 +37,9 @@
 
 # Software.
 ARCHIVE	:= ar
+# ARCHIVE	:= x86_64-w64-mingw32-ar
 CC		:= g++
+# CC		:= x86_64-w64-mingw32-g++
 COPY	:= cp
 DOXYGEN	:= doxygen
 NEWDIR	:= mkdir

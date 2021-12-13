@@ -72,9 +72,9 @@ Ellipse :: Ellipse  ( const float r
     const float major   {this -> major};
     const float minor   {this -> minor};
 
-    this -> x   = [&] (const float t) -> float {return major * cos (t);};
-    this -> y   = [&] (const float t) -> float {return minor * sin (t);};
-    this -> z   = [&] (const float t) -> float {return 0x0 * t;};
+    this -> x   = [=] (const float t) -> float {return major * cos (t);};
+    this -> y   = [=] (const float t) -> float {return minor * sin (t);};
+    this -> z   = [=] (const float t) -> float {return 0x0 * t;};
 
     return;
 

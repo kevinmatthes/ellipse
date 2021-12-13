@@ -68,10 +68,10 @@ Ellipse :: Ellipse  ( const float r
 
     const float alpha   = acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz));
     const float beta    = acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz));
-    
+
     const float major   {this -> major};
     const float minor   {this -> minor};
-    
+
     this -> x   = [&] (const float t) -> float {return major * cos (t);};
     this -> y   = [&] (const float t) -> float {return minor * sin (t);};
     this -> z   = [&] (const float t) -> float {return 0x0 * t;};

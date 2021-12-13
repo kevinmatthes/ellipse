@@ -48,6 +48,8 @@
 #include <functional>
 #include <vector>
 
+using std :: abs;
+using std :: acos;
 using std :: cos;
 using std :: function;
 using std :: sin;

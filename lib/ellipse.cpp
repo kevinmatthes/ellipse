@@ -61,13 +61,13 @@ Ellipse :: Ellipse  ( const float r
     const float bx  {ty * nz - tz * ny};
     const float by  {tz * nx - tx * nz};
     const float bz  {tx * ny - ty * nx};
-    
+
     const float cx_ {cx + e};
     const float cy_ {cy + e};
     const float cz_ {cz + e};
 
-    const float alpha   {acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz))};
-    const float beta    {acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz))};
+    const float alpha   = acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz));
+    const float beta    = acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz));
 
     return;
 

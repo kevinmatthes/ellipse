@@ -111,7 +111,9 @@
  * \param   nz  This ellipse's normal's z component.
  */
 
-/*! \fn     vector <float> Ellipse :: eval (const float t, const float offset)
+/*! \fn     vector <float> Ellipse :: eval  ( const float t
+ *                                          , const float offset
+ *                                          )
  *
  * The considered ellipse can act as the movement curve for mathematical objects
  * such as spheres.  Therefore, the object to move is assumed to be situated on

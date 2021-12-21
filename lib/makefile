@@ -58,10 +58,11 @@ LIBDIR	:= ../../lib/
 DIRS	:= $(LIBDIR)
 
 # Library compilation requirements.
-HEADERS	:= $(wildcard ./*.hpp)
-LIBRARY	:= ./libellipse.a
-SOURCE	:= $(wildcard ./*.cpp)
-OBJECTS	:= $(subst .cpp,.o, $(SOURCE))
+DOXFILES	:= $(wildcard ./*.dox)
+HEADERS		:= $(wildcard ./*.hpp)
+LIBRARY		:= ./libellipse.a
+SOURCE		:= $(wildcard ./*.cpp)
+OBJECTS		:= $(subst .cpp,.o, $(SOURCE))
 
 # Concrete files.
 DOXYFILE	:= ./doxygen.cfg
@@ -82,7 +83,7 @@ default: library
 $(DIRS):
 	$(NEWDIR) $@
 
-doxygen: $(wildcard ./*.dox) $(HEADERS) $(SOURCE)
+doxygen: $(DOXFILES) $(HEADERS) $(SOURCE)
 	$(DOXYGEN) $(DOXYFILE)
 	make $(MDOX) all
 

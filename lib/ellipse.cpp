@@ -94,6 +94,11 @@ Ellipse :: Ellipse  ( const float r
     none = none;
 }
 
+inline vector <float> Ellipse :: eval (const float t, const float offset)
+{
+    return Ellipse :: eval (t + offset);
+}
+
 vector <float> Ellipse :: eval (const float t)
 {
     vector <float>  ret {};

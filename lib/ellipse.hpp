@@ -91,6 +91,7 @@ class Ellipse
                 , const float nz
                 );
 
+        vector <float> eval (const float t, const float offset);
         vector <float> eval (const float t);
 };
 

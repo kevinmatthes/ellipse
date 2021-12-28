@@ -33,6 +33,7 @@
 *.a
 *.log
 *.o
+*.obj
 *.pdf
 
 # Documentation.

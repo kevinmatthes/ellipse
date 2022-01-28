@@ -40,15 +40,13 @@ COPY	:= cp
 REMOVE	:= rm
 
 # Make directories.
-MDOCS	:= -C ./.docs/
 MLIB	:= -C ./lib/
 
 # Directories.
-DOXDIR	:= ./.docs/html/ ./.docs/latex/
+DOXDIR	:= ./lib/html/ ./lib/latex/
 
 # Concrete files.
-PDF		:= ./.docs/documentation.pdf
-REFMAN	:= ./.docs/latex/refman.pdf
+REFMAN	:= ./lib/latex/refman.pdf
 
 
 
@@ -58,7 +56,7 @@ REFMAN	:= ./.docs/latex/refman.pdf
 #
 ##
 
-.PHONY: default doxygen library manual pdf submodule tidy
+.PHONY: default doxygen library manual submodule tidy
 
 default: submodule
 
@@ -67,14 +65,8 @@ doxygen: $(REFMAN)
 library:
 	make $(MLIB) default
 
-manual: $(PDF) $(REFMAN)
-	$(COPY) $(PDF) ./ellipse.pdf
+manual: $(REFMAN)
 	$(COPY) $(REFMAN) ./libellipse.pdf
-
-pdf: $(PDF)
-
-$(PDF):
-	make $(MDOCS) default
 
 $(REFMAN):
 	make $(MLIB) doxygen
@@ -84,7 +76,6 @@ submodule:
 
 tidy: $(REFMAN)
 	$(REMOVE) $(DOXDIR) $(wildcard ./*.pdf) -rf
-	make $(MDOCS) tidy
 	make $(MLIB) tidy
 
 ################################################################################

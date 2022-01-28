@@ -51,7 +51,7 @@ CFLAGS	:= -std=c++11 -Wall -Werror -Wextra -Wpedantic -D__ELLIPSE_INTERNAL__
 LFLAGS	:= -lm
 
 # Make directories.
-MDOX	:= -C ../.docs/latex/
+MDOX	:= -C ./latex/
 
 # Directories.
 LIBDIR	:= ../../lib/

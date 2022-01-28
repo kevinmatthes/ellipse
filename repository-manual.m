@@ -19,7 +19,7 @@
 %%%%
 %%
 %%  FILE
-%%      pandoc-repository.m
+%%      repository-manual.m
 %%
 %%  BRIEF
 %%      Create a LaTeX documentation for this repository using `pandoc`.

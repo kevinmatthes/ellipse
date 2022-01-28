@@ -65,7 +65,7 @@ SOURCE		:= $(wildcard ./*.cpp)
 OBJECTS		:= $(subst .cpp,.o, $(SOURCE))
 
 # Concrete files.
-DOXYFILE	:= ./doxygen.cfg
+DOXYFILE	:= ./c++.doxygen.cfg
 SELF		:= ./makefile
 
 

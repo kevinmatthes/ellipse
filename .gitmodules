@@ -1,3 +1,6 @@
 [submodule "contributing"]
 	path = contributing
 	url = https://github.com/kevinmatthes/contributing
+[submodule "routines"]
+	path = routines
+	url = https://github.com/kevinmatthes/routines

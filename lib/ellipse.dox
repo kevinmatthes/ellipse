@@ -38,46 +38,6 @@
 
 /******************************************************************************/
 
-/*! \fn     Ellipse :: Ellipse  ( const float r
- *                              , const float e
- *                              , const float cx
- *                              , const float cy
- *                              , const float cz
- *                              , const float tx
- *                              , const float ty
- *                              , const float tz
- *                              , const float nx
- *                              , const float ny
- *                              , const float nz
- *                              )
- *
- * This class constructs a simple ellipse from the given data.  Thereby, the
- * considered ellipse is oriented in space by a normal and a tangent.
- *
- * The normal is the normal of the plane the ellipse is situated in.  Hence, it
- * determines which side of the ellipse is a front face.  This information is
- * important for optimisation techniques such as Backface Culling.
- *
- * The tangent of the ellipse is a vector which spans the plane the ellipse lays
- * in.  Furthermore, the tangent acts as the ellipse's Up Vector.  This aspect
- * is required in order to transform the ellipse properly.
- *
- *
- *
- * \brief   Construct a new ellipse from the given data.
- * \param   r   This ellipse's radius.
- * \param   e   This ellipse's excentricity.
- * \param   cx  This ellipse's centre's x coordinate.
- * \param   cy  This ellipse's centre's y coordinate.
- * \param   cz  This ellipse's centre's z coordinate.
- * \param   tx  This ellipse's tangent's x component.
- * \param   ty  This ellipse's tangent's y component.
- * \param   tz  This ellipse's tangent's z component.
- * \param   nx  This ellipse's normal's x component.
- * \param   ny  This ellipse's normal's y component.
- * \param   nz  This ellipse's normal's z component.
- */
-
 /*! \fn     vector <float> Ellipse :: eval  ( const float t
  *                                          , const float offset
  *                                          )

@@ -56,7 +56,16 @@
  * \return  A new ellipse.
  *
  * This constructor will create a new ellipse from its radius, eccentricity,
- * centre, tangent and normal.
+ * centre, tangent and normal.  Thereby, the new ellipse is oriented in space
+ * by the normal and the tangent.
+ *
+ * The normal is the normal of the plane the ellipse is situated in.  Hence, it
+ * determines which side of the ellipse is a front face.  This information is
+ * important for optimisation techniques such as Backface Culling.
+ *
+ * The tangent of the ellipse is one of the vectors which span the plane the
+ * ellipse is embedded in.  Furthermore, the tangent acts as the ellipse's Up
+ * Vector.  This aspect is required in order to transform the ellipse properly.
  */
 
 Ellipse :: Ellipse  ( const float r

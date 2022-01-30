@@ -38,19 +38,6 @@
 
 /******************************************************************************/
 
-/*! \def    __ELLIPSE_HPP__
- *
- * In order to prevent unintended side effects when including this header
- * mulitple times, this define is utilised such that its header is included at
- * most once.
- *
- *
- *
- * \brief   Ensuring this header being included just once.
- */
-
-
-
 /*! \fn     Ellipse :: Ellipse  ( const float r
  *                              , const float e
  *                              , const float cx

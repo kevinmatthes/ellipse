@@ -56,7 +56,7 @@ REFMAN	:= ./lib/latex/refman.pdf
 #
 ##
 
-.PHONY: default doxygen library manual submodule tidy
+.PHONY: default doxygen library manual tidy
 
 default: submodule
 
@@ -70,9 +70,6 @@ manual: $(REFMAN)
 
 $(REFMAN):
 	make $(MLIB) doxygen
-
-submodule:
-	make $(MLIB) submodule
 
 tidy: $(REFMAN)
 	$(REMOVE) $(DOXDIR) $(wildcard ./*.pdf) -rf

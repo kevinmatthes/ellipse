@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021─2022 Kevin Matthes
+ * Copyright (C) 2022 Kevin Matthes
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,110 +18,94 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Introducing the `Ellipse' class.
- * \copyright   (C) 2021--2022 Kevin Matthes.
+ * \brief       Construct a new ellipse.
+ * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
- * \date        2021--2022
- * \file        Ellipse.hpp
+ * \date        2022
+ * \file        Ellipse.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  * \sa          Ellipse
  *
- * This is the main header of the repository introducing the `Ellipse` class.
- *
- * The introduced class is intended to model ellipses by a parametrisation for
- * 3D spaces.  The created ellipses are oriented by a normal and a tangent.
+ * This source file defines the constructor of the `Ellipse` class.
  */
 
 /******************************************************************************/
 
 /*
- * Security settings.
- */
-
-#pragma once
-#ifndef __ELLIPSE_HPP__
-#define __ELLIPSE_HPP__
-
-
-
-/*
  * Includes.
  */
 
-#include <cmath>
-#include <functional>
-#include <vector>
-
-using std :: abs;
-using std :: acos;
-using std :: cos;
-using std :: function;
-using std :: sin;
-using std :: sqrt;
-using std :: vector;
+#include "Ellipse.hpp"
 
 
 
 /**
- * \brief   A simple ellipse class.
+ * \brief   Construct a new `Ellipse` instance from the given data.
+ * \param   r   The radius.
+ * \param   e   The eccentricity.
+ * \param   cx  The x coordinate of the centre.
+ * \param   cy  The y coordinate of the centre.
+ * \param   cz  The z coordinate of the centre.
+ * \param   tx  The x component of the tangent (up vector).
+ * \param   ty  The y component of the tangent (up vector).
+ * \param   tz  The z component of the tangent (up vector).
+ * \param   nx  The x component of the normal (front face indication).
+ * \param   ny  The y component of the normal (front face indication).
+ * \param   nz  The z component of the normal (front face indication).
+ * \return  A new ellipse.
  *
- * This class represents an ellipse in a 3D space, oriented by a normal and a
- * tangent.
- *
- * The ellipse is assumed to be embedded into a plane whose normal will be used
- * in order to determine the orientation of the ellipse regarding front and back
- * faces.
- *
- * Since the ellipse can be rotated arbitrarily within its plane, a second
- * vector is required in order to determine which direction is up.  This
- * information is provided by the tangent.
+ * This constructor will create a new ellipse from its radius, eccentricity,
+ * centre, tangent and normal.
  */
 
-class Ellipse
+Ellipse :: Ellipse  ( const float r
+                    , const float e
+                    , const float cx
+                    , const float cy
+                    , const float cz
+                    , const float tx
+                    , const float ty
+                    , const float tz
+                    , const float nx
+                    , const float ny
+                    , const float nz
+                    )
 {
-    private:
-        float   major   {0.};
-        float   minor   {0.};
+    this -> major   = r + e;
+    this -> minor   = r;
 
-        function <float (const float)>  x
-            {[=] (const float t) -> float {return cos (t);}};
+    const float bx  {ty * nz - tz * ny};
+    const float by  {tz * nx - tx * nz};
+    const float bz  {tx * ny - ty * nx};
 
-        function <float (const float)>  y
-            {[=] (const float t) -> float {return sin (t);}};
+    const float cx_ {cx + e};
+    const float cy_ {cy + e};
+    const float cz_ {cz + e};
 
-        function <float (const float)>  z
-            {[=] (const float t) -> float {return 0.f * t;}};
+    const float alpha   = acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz));
+    const float beta    = acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz));
 
-    public:
-        Ellipse ( const float r
-                , const float e
-                , const float cx
-                , const float cy
-                , const float cz
-                , const float tx
-                , const float ty
-                , const float tz
-                , const float nx
-                , const float ny
-                , const float nz
-                );
+    const float major   {this -> major};
+    const float minor   {this -> minor};
 
-        vector <float> eval (const float t, const float offset);
-        vector <float> eval (const float t);
-};
+    this -> x   = [=] (const float t) -> float {return major * cos (t);};
+    this -> y   = [=] (const float t) -> float {return minor * sin (t);};
+    this -> z   = [=] (const float t) -> float {return 0x0 * t;};
 
+    return;
 
+    float none = 0.f;
 
-/*
- * End of header.
- */
-
-// Tidying up.
-#ifndef __ELLIPSE_INTERNAL__
-#endif  // ! __ELLIPSE_INTERNAL__
-
-// Leaving the header.
-#endif  // ! __ELLIPSE_HPP__
+    none = bx;
+    none = by;
+    none = bz;
+    none = cx_;
+    none = cy_;
+    none = cz_;
+    none = alpha;
+    none = beta;
+    none = none;
+}
 
 /******************************************************************************/

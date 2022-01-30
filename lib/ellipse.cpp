@@ -34,7 +34,7 @@
  * Includes.
  */
 
-#include "ellipse.hpp"
+#include "Ellipse.hpp"
 
 
 

@@ -42,58 +42,6 @@
  * Class definition.
  */
 
-Ellipse :: Ellipse  ( const float r
-                    , const float e
-                    , const float cx
-                    , const float cy
-                    , const float cz
-                    , const float tx
-                    , const float ty
-                    , const float tz
-                    , const float nx
-                    , const float ny
-                    , const float nz
-                    )
-{
-    this -> major   = r + e;
-    this -> minor   = r;
-
-    const float bx  {ty * nz - tz * ny};
-    const float by  {tz * nx - tx * nz};
-    const float bz  {tx * ny - ty * nx};
-
-    const float cx_ {cx + e};
-    const float cy_ {cy + e};
-    const float cz_ {cz + e};
-
-    const float alpha   = acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz));
-    const float beta    = acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz));
-
-    const float major   {this -> major};
-    const float minor   {this -> minor};
-
-    this -> x   = [=] (const float t) -> float {return major * cos (t);};
-    this -> y   = [=] (const float t) -> float {return minor * sin (t);};
-    this -> z   = [=] (const float t) -> float {return 0x0 * t;};
-
-    return;
-
-    float   none    = 0.f;
-
-    none = bx;
-    none = by;
-    none = bz;
-
-    none = cx_;
-    none = cy_;
-    none = cz_;
-
-    none = alpha;
-    none = beta;
-
-    none = none;
-}
-
 vector <float> Ellipse :: eval (const float t, const float offset)
 {
     vector <float>  ret {};

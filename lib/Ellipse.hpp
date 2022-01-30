@@ -25,7 +25,6 @@
  * \file        Ellipse.hpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
- * \sa          Ellipse
  *
  * This is the main header of the repository introducing the `Ellipse` class.
  *

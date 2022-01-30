@@ -41,8 +41,6 @@ ARCHIVE	:= ar
 CC		:= g++
 # CC		:= x86_64-w64-mingw32-g++
 COPY	:= cp
-DOXYGEN	:= doxygen
-NEWDIR	:= mkdir
 REMOVE	:= rm
 
 # Software flags.
@@ -50,23 +48,14 @@ AFLAGS	:= rs
 CFLAGS	:= -std=c++11 -Wall -Werror -Wextra -Wpedantic -D__ELLIPSE_INTERNAL__
 LFLAGS	:= -lm
 
-# Make directories.
-MDOX	:= -C ./latex/
-
-# Directories.
-LIBDIR	:= ../../lib/
-DIRS	:= $(LIBDIR)
-
 # Library compilation requirements.
-DOXFILES	:= $(wildcard ./*.dox)
 HEADERS		:= $(wildcard ./*.hpp)
 LIBRARY		:= ./libellipse.a
 SOURCE		:= $(wildcard ./*.cpp)
 OBJECTS		:= $(subst .cpp,.o, $(SOURCE))
 
 # Concrete files.
-DOXYFILE	:= ./c++.doxygen.cfg
-SELF		:= ./makefile
+SELF	:= ./makefile
 
 
 
@@ -76,16 +65,9 @@ SELF		:= ./makefile
 #
 ##
 
-.PHONY: default doxygen library tidy
+.PHONY: default library tidy
 
 default: library
-
-$(DIRS):
-	$(NEWDIR) $@
-
-doxygen: $(DOXFILES) $(HEADERS) $(SOURCE)
-	$(DOXYGEN) $(DOXYFILE)
-	make $(MDOX) all
 
 library: $(LIBRARY)
 

@@ -58,8 +58,19 @@ using std :: vector;
 
 
 
-/*
- * Class definition.
+/**
+ * \brief   A simple ellipse class.
+ *
+ * This class represents an ellipse in a 3D space, oriented by a normal and a
+ * tangent.
+ *
+ * The ellipse is assumed to be embedded into a plane whose normal will be used
+ * in order to determine the orientation of the ellipse regarding front and back
+ * faces.
+ *
+ * Since the ellipse can be rotated arbitrarily within its plane, a second
+ * vector is required in order to determine which direction is up.  This
+ * information is provided by the tangent.
  */
 
 class Ellipse

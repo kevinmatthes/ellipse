@@ -76,7 +76,7 @@ SELF		:= ./makefile
 #
 ##
 
-.PHONY: default doxygen library submodule tidy
+.PHONY: default doxygen library tidy
 
 default: library
 
@@ -94,10 +94,6 @@ $(LIBRARY): $(OBJECTS)
 
 $(OBJECTS): $(SOURCE)
 	$(CC) $(CFLAGS) -c $(LFLAGS) $^
-
-submodule: $(HEADERS) $(LIBRARY) $(LIBDIR)
-	$(COPY) $(HEADERS) $(LIBRARY) $(LIBDIR)
-	make tidy
 
 tidy: $(LIBRARY) $(OBJECTS)
 	$(REMOVE) $^

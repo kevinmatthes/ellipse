@@ -17,15 +17,20 @@
  */
 
 /**
- * \file    ellipse.hpp
- * \brief   Introducing the `Ellipse' class.
- *
  * \author      Kevin Matthes
- * \copyright   (C) 2021─2022 Kevin Matthes.
+ * \brief       Introducing the `Ellipse' class.
+ * \copyright   (C) 2021--2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
- * \date        2021─2022
+ * \date        2021--2022
+ * \file        ellipse.hpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ * \sa          Ellipse
+ *
+ * This is the main header of the repository introducing the `Ellipse` class.
+ *
+ * The introduced class is intended to model ellipses by a parametrisation for
+ * 3D spaces.  The created ellipses are oriented by a normal and a tangent.
  */
 
 /******************************************************************************/

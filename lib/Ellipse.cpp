@@ -47,9 +47,9 @@
  * \param   cx  The x coordinate of the centre.
  * \param   cy  The y coordinate of the centre.
  * \param   cz  The z coordinate of the centre.
- * \param   tx  The x component of the tangent (up vector).
- * \param   ty  The y component of the tangent (up vector).
- * \param   tz  The z component of the tangent (up vector).
+ * \param   tx  The x component of the tangent (Up Vector).
+ * \param   ty  The y component of the tangent (Up Vector).
+ * \param   tz  The z component of the tangent (Up Vector).
  * \param   nx  The x component of the normal (front face indication).
  * \param   ny  The y component of the normal (front face indication).
  * \param   nz  The z component of the normal (front face indication).

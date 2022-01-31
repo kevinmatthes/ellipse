@@ -66,7 +66,7 @@ using std :: vector;
  * \brief   A simple ellipse class.
  *
  * This class represents an ellipse in a 3D space, oriented by a normal and a
- * tangent.
+ * tangent.  The model will be a curve parametrised by time.
  *
  * The ellipse is assumed to be embedded into a plane whose normal will be used
  * in order to determine the orientation of the ellipse regarding front and back

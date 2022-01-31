@@ -57,7 +57,9 @@
  *
  * The point of time to evaluate the ellipse for could be the passed time since
  * the application was started, for instance.  In order to achieve a fixed
- * offset for the evaluation, `offset` is provided.
+ * offset for the evaluation, `offset` can be provided.  In case it should be
+ * omitted, another overload for this method is provided whose `offset` is set
+ * to zero, by default.
  *
  * The returned curve point is stored as a `std :: vector` which contains the
  * x, y and z coordinates of the determined curve point in this order.

@@ -43,6 +43,22 @@
 
 ## Description
 
+This directory contains the C++ source code for the provided library. It
+contains the main header as well as the implementation of all methods.
 
+For better maintainability, each method is stored in a separate source file.  In
+case there should be multiple implementations for one method by overloading the
+function, all overloads of the same function can be found in the same file.
+
+The library is built using GNU Octave whose installation therefore needs to be
+ensured.
+
+## Content
+
+| File          | Description                                   |
+|:--------------|:----------------------------------------------|
+| `Ellipse.cpp` | The constructor of the `Ellipse` class.       |
+| `Ellipse.hpp` | The main header of the provided library.      |
+| `eval.cpp`    | The implementations of the evaluation method. |
 
 <!----------------------------------------------------------------------------->

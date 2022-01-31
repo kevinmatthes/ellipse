@@ -79,9 +79,17 @@ vector <float> Ellipse :: eval (const float t, const float offset)
 
 
 /**
+ * \brief   Evaluate this ellipse without any offset.
+ * \param   t   The point of time to evaluate this ellipse for.
+ * \return  The evaluated curve point.
+ * \sa      eval (const float t, const float offset)
+ *
+ * This implementation of the evaluation method calls the other one with
+ * `offset` being set to zero, by default.  Thus, this method will determine
+ * the intended curve point without any offset.
  */
 
-vector <float> Ellipse :: eval (const float t)
+inline vector <float> Ellipse :: eval (const float t)
 {
     return Ellipse :: eval (t, 0x0);
 }

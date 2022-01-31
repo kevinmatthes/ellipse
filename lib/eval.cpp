@@ -46,8 +46,33 @@
 
 
 /**
+ * \brief   Evaluate this ellipse for a certain parameter value.
+ * \param   t       The point of time to evaluate this ellipse for.
+ * \param   offset  The temporal offset regarding the evaluation.
+ * \return  The evaluated curve point.
+ *
+ * This implementation of the evaluation method takes the point of time for
+ * which the considered ellipse shall be evaluated as well as the temporal
+ * offset.
+ *
+ * The point of time to evaluate the ellipse for could be the passed time since
+ * the application was started, for instance.  In order to achieve a fixed
+ * offset for the evaluation, `offset` is provided.
+ *
+ * The returned curve point is stored as a `std :: vector` which contains the
+ * x, y and z coordinates of the determined curve point in this order.
  */
 
+vector <float> Ellipse :: eval (const float t, const float offset)
+{
+    vector <float>  ret {};
+
+    ret.push_back (this -> x (t + offset));
+    ret.push_back (this -> y (t + offset));
+    ret.push_back (this -> z (t + offset));
+
+    return ret;
+}
 
 
 /******************************************************************************/

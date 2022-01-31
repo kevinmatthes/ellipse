@@ -42,17 +42,6 @@
  * Class definition.
  */
 
-vector <float> Ellipse :: eval (const float t, const float offset)
-{
-    vector <float>  ret {};
-
-    ret.push_back (this -> x (t + offset));
-    ret.push_back (this -> y (t + offset));
-    ret.push_back (this -> z (t + offset));
-
-    return ret;
-}
-
 inline vector <float> Ellipse :: eval (const float t)
 {
     return Ellipse :: eval (t, 0x0);

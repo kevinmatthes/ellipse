@@ -18,16 +18,21 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Construct a new ellipse.
+ * \brief       Evaluate curve points for the considered ellipse.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        Ellipse.cpp
+ * \file        eval.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  * \sa          Ellipse
  *
- * This source file defines the constructor of the `Ellipse` class.
+ * Since the `Ellipse` class models an ellipse by a parametrisation, it can be
+ * evaluated for certain parameter values.  This parameter value needs to be
+ * passed to this method, `eval`.
+ *
+ * Sometimes, the parameter value shall be evaluated with a certain offset.
+ * Therefore, this file defines a set of overloads.
  */
 
 /******************************************************************************/
@@ -41,80 +46,8 @@
 
 
 /**
- * \brief   Construct a new `Ellipse` instance from the given data.
- * \param   r   The radius.
- * \param   e   The eccentricity.
- * \param   cx  The x coordinate of the centre.
- * \param   cy  The y coordinate of the centre.
- * \param   cz  The z coordinate of the centre.
- * \param   tx  The x component of the tangent (Up Vector).
- * \param   ty  The y component of the tangent (Up Vector).
- * \param   tz  The z component of the tangent (Up Vector).
- * \param   nx  The x component of the normal (front face indication).
- * \param   ny  The y component of the normal (front face indication).
- * \param   nz  The z component of the normal (front face indication).
- * \return  A new ellipse.
- *
- * This constructor will create a new ellipse from its radius, eccentricity,
- * centre, tangent and normal.  Thereby, the new ellipse is oriented in space
- * by the normal and the tangent.
- *
- * The normal is the normal of the plane the ellipse is situated in.  Hence, it
- * determines which side of the ellipse is a front face.  This information is
- * important for optimisation techniques such as Backface Culling.
- *
- * The tangent of the ellipse is one of the vectors which span the plane the
- * ellipse is embedded in.  Furthermore, the tangent acts as the ellipse's Up
- * Vector.  This aspect is required in order to transform the ellipse properly.
  */
 
-Ellipse :: Ellipse  ( const float r
-                    , const float e
-                    , const float cx
-                    , const float cy
-                    , const float cz
-                    , const float tx
-                    , const float ty
-                    , const float tz
-                    , const float nx
-                    , const float ny
-                    , const float nz
-                    )
-{
-    this -> major   = r + e;
-    this -> minor   = r;
 
-    const float bx  {ty * nz - tz * ny};
-    const float by  {tz * nx - tx * nz};
-    const float bz  {tx * ny - ty * nx};
-
-    const float cx_ {cx + e};
-    const float cy_ {cy + e};
-    const float cz_ {cz + e};
-
-    const float alpha   = acos (abs (nz) / sqrt (nx * nx + ny * ny + nz * nz));
-    const float beta    = acos (abs (tx) / sqrt (tx * tx + ty * ty + tz * tz));
-
-    const float major   {this -> major};
-    const float minor   {this -> minor};
-
-    this -> x   = [=] (const float t) -> float {return major * cos (t);};
-    this -> y   = [=] (const float t) -> float {return minor * sin (t);};
-    this -> z   = [=] (const float t) -> float {return 0x0 * t;};
-
-    return;
-
-    float none = 0.f;
-
-    none = bx;
-    none = by;
-    none = bz;
-    none = cx_;
-    none = cy_;
-    none = cz_;
-    none = alpha;
-    none = beta;
-    none = none;
-}
 
 /******************************************************************************/

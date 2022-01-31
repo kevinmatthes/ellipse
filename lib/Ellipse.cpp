@@ -25,7 +25,6 @@
  * \file        Ellipse.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
- * \sa          Ellipse
  *
  * This source file defines the constructor of the `Ellipse` class.
  */

@@ -58,4 +58,7 @@ recognition.
 |:------------------|:-----:|
 | `__ELLIPSE_HPP__` | macro |
 
+Any other symbols are either documented directly in the source file they
+originate from or not documentable by Doxygen.
+
 <!----------------------------------------------------------------------------->

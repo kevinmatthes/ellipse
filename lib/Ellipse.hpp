@@ -109,21 +109,21 @@ class Ellipse
             {[=] (const float t) -> float {return 0.f * t;}};
 
     public:
-        Ellipse ( const float r
-                , const float e
-                , const float cx
-                , const float cy
-                , const float cz
-                , const float tx
-                , const float ty
-                , const float tz
-                , const float nx
-                , const float ny
-                , const float nz
-                );
+        EXPORT  Ellipse ( const float r
+                        , const float e
+                        , const float cx
+                        , const float cy
+                        , const float cz
+                        , const float tx
+                        , const float ty
+                        , const float tz
+                        , const float nx
+                        , const float ny
+                        , const float nz
+                        );
 
-        vector <float> eval (const float t, const float offset);
-        vector <float> eval (const float t);
+        EXPORT  vector <float> eval (const float t, const float offset);
+        EXPORT  vector <float> eval (const float t);
 };
 
 

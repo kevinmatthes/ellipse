@@ -26,7 +26,7 @@
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file documents the macro `__ELLIPSE_HPP__` of the ellipse.h.
+ * This file documents the macro `__ELLIPSE_HPP__` of ellipse.hpp.
  */
 
 /******************************************************************************/

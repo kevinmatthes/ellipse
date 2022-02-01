@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Kevin Matthes
+ * Copyright (C) 2021─2022 Kevin Matthes
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,15 +17,19 @@
  */
 
 /**
- * \file    ellipse.hpp
- * \brief   Introducing the `Ellipse' class.
- *
  * \author      Kevin Matthes
- * \copyright   (C) 2021 Kevin Matthes.
+ * \brief       Introducing the `Ellipse' class.
+ * \copyright   (C) 2021--2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
- * \date        2021
+ * \date        2021--2022
+ * \file        Ellipse.hpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This is the main header of the repository introducing the `Ellipse` class.
+ *
+ * The introduced class is intended to model ellipses by a parametrisation for
+ * 3D spaces.  The created ellipses are oriented by a normal and a tangent.
  */
 
 /******************************************************************************/
@@ -59,7 +63,34 @@ using std :: vector;
 
 
 /*
- * Class definition.
+ * Settings.
+ */
+
+#ifdef  __WINDOWS__
+#ifdef  __MAKE_DLL__
+#define EXPORT __declspec (dllexport)
+#else
+#define EXPORT __declspec (dllimport)
+#endif  // ! __MAKE_DLL__
+#else
+#define EXPORT
+#endif  // ! __WINDOWS__
+
+
+
+/**
+ * \brief   A simple ellipse class.
+ *
+ * This class represents an ellipse in a 3D space, oriented by a normal and a
+ * tangent.  The model will be a curve parametrised by time.
+ *
+ * The ellipse is assumed to be embedded into a plane whose normal will be used
+ * in order to determine the orientation of the ellipse regarding front and back
+ * faces.
+ *
+ * Since the ellipse can be rotated arbitrarily within its plane, a second
+ * vector is required in order to determine which direction is up.  This
+ * information is provided by the tangent.
  */
 
 class Ellipse
@@ -78,20 +109,21 @@ class Ellipse
             {[=] (const float t) -> float {return 0.f * t;}};
 
     public:
-        Ellipse ( const float r
-                , const float e
-                , const float cx
-                , const float cy
-                , const float cz
-                , const float tx
-                , const float ty
-                , const float tz
-                , const float nx
-                , const float ny
-                , const float nz
-                );
+        EXPORT  Ellipse ( const float r
+                        , const float e
+                        , const float cx
+                        , const float cy
+                        , const float cz
+                        , const float tx
+                        , const float ty
+                        , const float tz
+                        , const float nx
+                        , const float ny
+                        , const float nz
+                        );
 
-        vector <float> eval (const float t);
+        EXPORT  vector <float> eval (const float t, const float offset);
+        EXPORT  vector <float> eval (const float t);
 };
 
 

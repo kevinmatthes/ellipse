@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Kevin Matthes
+ * Copyright (C) 2022 Kevin Matthes
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,15 +17,16 @@
  */
 
 /**
- * \file    ellipse.cpp
- * \brief   Defining the `Ellipse' class.
- *
  * \author      Kevin Matthes
- * \copyright   (C) 2021 Kevin Matthes.
+ * \brief       Construct a new ellipse.
+ * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
- * \date        2021
+ * \date        2022
+ * \file        Ellipse.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This source file defines the constructor of the `Ellipse` class.
  */
 
 /******************************************************************************/
@@ -34,12 +35,36 @@
  * Includes.
  */
 
-#include "ellipse.hpp"
+#include "Ellipse.hpp"
 
 
 
-/*
- * Class definition.
+/**
+ * \brief   Construct a new `Ellipse` instance from the given data.
+ * \param   r   The radius.
+ * \param   e   The eccentricity.
+ * \param   cx  The x coordinate of the centre.
+ * \param   cy  The y coordinate of the centre.
+ * \param   cz  The z coordinate of the centre.
+ * \param   tx  The x component of the tangent (Up Vector).
+ * \param   ty  The y component of the tangent (Up Vector).
+ * \param   tz  The z component of the tangent (Up Vector).
+ * \param   nx  The x component of the normal (front face indication).
+ * \param   ny  The y component of the normal (front face indication).
+ * \param   nz  The z component of the normal (front face indication).
+ * \return  A new ellipse.
+ *
+ * This constructor will create a new ellipse from its radius, eccentricity,
+ * centre, tangent and normal.  Thereby, the new ellipse is oriented in space
+ * by the normal and the tangent.
+ *
+ * The normal is the normal of the plane the ellipse is situated in.  Hence, it
+ * determines which side of the ellipse is a front face.  This information is
+ * important for optimisation techniques such as Backface Culling.
+ *
+ * The tangent of the ellipse is one of the vectors which span the plane the
+ * ellipse is embedded in.  Furthermore, the tangent acts as the ellipse's Up
+ * Vector.  This aspect is required in order to transform the ellipse properly.
  */
 
 Ellipse :: Ellipse  ( const float r
@@ -78,31 +103,17 @@ Ellipse :: Ellipse  ( const float r
 
     return;
 
-    float   none    = 0.f;
+    float none = 0.f;
 
     none = bx;
     none = by;
     none = bz;
-
     none = cx_;
     none = cy_;
     none = cz_;
-
     none = alpha;
     none = beta;
-
     none = none;
-}
-
-vector <float> Ellipse :: eval (const float t)
-{
-    vector <float>  ret {};
-
-    ret.push_back (this -> x (t));
-    ret.push_back (this -> y (t));
-    ret.push_back (this -> z (t));
-
-    return ret;
 }
 
 /******************************************************************************/

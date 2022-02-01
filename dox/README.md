@@ -41,6 +41,12 @@
 
 # `./dox/`
 
+In order to avoid both redundant explanations of related symbols and to
+unnecessarily enlarge the source files, the documentation information of some
+symbols is provided by this directory.
 
+Any symbol described in this directory has a `*.dox` file on its own, named
+accordingly.  This benefits not only the maintainabilty of these docstrings but
+also the intuitive file recognition.
 
 <!----------------------------------------------------------------------------->

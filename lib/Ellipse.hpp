@@ -96,8 +96,10 @@ using std :: vector;
 class Ellipse
 {
     private:
-        float   major   {0.};
-        float   minor   {0.};
+        float   eccentricity    {0.};
+        float   major           {0.};
+        float   minor           {0.};
+        float   radius          {0.};
 
         function <float (const float)>  x
             {[=] (const float t) -> float {return cos (t);}};

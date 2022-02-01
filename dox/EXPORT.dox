@@ -22,22 +22,24 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        __ELLIPSE_HPP__.dox
+ * \file        EXPORT.dox
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file documents the macro `__ELLIPSE_HPP__` of the ellipse.h.
+ * This file documents the macro `EXPORT` of ellipse.hpp.
  */
 
 /******************************************************************************/
 
-/*! \def    __ELLIPSE_HPP__
+/*! \def    EXPORT
  *
- * \brief   Ensuring this header being included just once.
+ * \brief   Symbol export settings for compilation on Windows systems.
  *
- * In order to prevent unintended side effects when including this header
- * mulitple times, this define is utilised such that this header is included at
- * most once.
+ * In order to compile a Dynamic Link Library (DLL) from this source code, the
+ * symbols to export are to tag accordingly.  Since this affects only Windows
+ * machines, the settings are implemented as preprocessor defines such that they
+ * can be passed to the compiler on demand and depending on the used operating
+ * system.
  */
 
 /******************************************************************************/

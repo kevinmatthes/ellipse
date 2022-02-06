@@ -52,7 +52,6 @@
  * \param   nx  The x component of the normal (front face indication).
  * \param   ny  The y component of the normal (front face indication).
  * \param   nz  The z component of the normal (front face indication).
- * \return  A new ellipse.
  *
  * This constructor will create a new ellipse from its radius, eccentricity,
  * centre, tangent and normal.  Thereby, the new ellipse is oriented in space

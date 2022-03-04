@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The setter for `Ellipse :: radius`.
+ * \brief       The setter for `Ellipse :: centre`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        set_radius.cpp
+ * \file        set_centre.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `radius` is a private attribute, it should be set exclusively using
+ * Since `centre` is a private attribute, it should be set exclusively using
  * this method.
  */
 
@@ -41,30 +41,30 @@
 
 
 /**
- * \brief   Reset this ellipse's radius.
+ * \brief   Reset this ellipse's centre.
  *
- * Set this ellipse's radius to `0.f`.
+ * Set this ellipse's centre to `0.f`.
  */
 
-inline void Ellipse :: set_radius (void)
+inline void Ellipse :: set_centre (void)
 {
-    this -> set_radius (0.f);
+    this -> set_centre (0.f);
     return;
 }
 
 
 
 /**
- * \brief   The setter method for `Ellipse :: radius`.
- * \param   radius  This ellipse's radius.
+ * \brief   The setter method for `Ellipse :: centre`.
+ * \param   centre  This ellipse's centre.
  *
- * Since `radius` is a private attribute, it should be set exclusively using
+ * Since `centre` is a private attribute, it should be set exclusively using
  * this method.
  */
 
-inline void Ellipse :: set_radius (const float radius)
+inline void Ellipse :: set_centre (const float centre)
 {
-    this -> radius = radius;
+    this -> centre = centre;
     return;
 }
 

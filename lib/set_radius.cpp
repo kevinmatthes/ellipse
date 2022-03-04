@@ -41,6 +41,20 @@
 
 
 /**
+ * \brief   Reset this ellipse's radius.
+ *
+ * Set this ellipse's radius to `0.f`.
+ */
+
+inline void Ellipse :: set_radius (void)
+{
+    this -> set_radius (0.f);
+    return;
+}
+
+
+
+/**
  * \brief   The setter method for `Ellipse :: radius`.
  * \param   radius  This ellipse's radius.
  *

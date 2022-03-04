@@ -41,6 +41,20 @@
 
 
 /**
+ * \brief   Reset this ellipse's minor.
+ *
+ * Set this ellipse's minor to `0.f`.
+ */
+
+inline void Ellipse :: set_minor (void)
+{
+    this -> set_minor (0.f);
+    return;
+}
+
+
+
+/**
  * \brief   The setter method for `Ellipse :: minor`.
  * \param   minor   This ellipse's minor.
  *

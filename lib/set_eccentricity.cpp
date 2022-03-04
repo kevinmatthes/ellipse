@@ -41,6 +41,20 @@
 
 
 /**
+ * \brief   Reset this ellipse's eccentricity.
+ *
+ * Set this ellipse's eccentricity to `0.f`.
+ */
+
+inline void Ellipse :: set_eccentricity (void)
+{
+    this -> set_eccentricity (0.f);
+    return;
+}
+
+
+
+/**
  * \brief   The setter method for `Ellipse :: eccentricity`.
  * \param   eccentricity    This ellipse's eccentricity.
  *

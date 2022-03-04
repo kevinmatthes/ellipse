@@ -41,6 +41,20 @@
 
 
 /**
+ * \brief   Reset this ellipse's major.
+ *
+ * Set this ellipse's major to `0.f`.
+ */
+
+inline void Ellipse :: set_major (void)
+{
+    this -> set_major (0.f);
+    return;
+}
+
+
+
+/**
  * \brief   The setter method for `Ellipse :: major`.
  * \param   major   This ellipse's major.
  *

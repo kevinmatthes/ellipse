@@ -40,6 +40,25 @@
 
 
 /**
+ */
+
+Ellipse :: Ellipse (void)
+{
+    this -> eccentricity    = 0.f;
+    this -> major           = 0.f;
+    this -> minor           = 0.f;
+    this -> radius          = 0.f;
+
+    this -> x   = {[=] (const float t) -> float {return cos (t);}};
+    this -> y   = {[=] (const float t) -> float {return sin (t);}};
+    this -> z   = {[=] (const float t) -> float {return 0.f * t;}};
+
+    return;
+}
+
+
+
+/**
  * \brief   Construct a new `Ellipse` instance from the given data.
  * \param   r   The radius.
  * \param   e   The eccentricity.

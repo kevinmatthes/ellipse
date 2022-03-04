@@ -96,19 +96,13 @@ using std :: vector;
 class Ellipse
 {
     private:
-        float   eccentricity    {0.};
-        float   major           {0.};
-        float   minor           {0.};
-        float   radius          {0.};
-
-        function <float (const float)>  x
-            {[=] (const float t) -> float {return cos (t);}};
-
-        function <float (const float)>  y
-            {[=] (const float t) -> float {return sin (t);}};
-
-        function <float (const float)>  z
-            {[=] (const float t) -> float {return 0.f * t;}};
+        float                           eccentricity;
+        float                           major;
+        float                           minor;
+        float                           radius;
+        function <float (const float)>  x;
+        function <float (const float)>  y;
+        function <float (const float)>  z;
 
         EXPORT  float get_eccentricity  (void);
         EXPORT  float get_major         (void);
@@ -116,6 +110,7 @@ class Ellipse
         EXPORT  float get_radius        (void);
 
     public:
+        EXPORT  Ellipse (void);
         EXPORT  Ellipse ( const float r
                         , const float e
                         , const float cx

@@ -18,16 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: major`.
+ * \brief       The getter for `Ellipse :: x`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_major.cpp
+ * \file        get_x.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `major` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `x` is a private attribute, it should be called exclusively using this
+ * method.
  */
 
 /******************************************************************************/
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: major`.
- * \return  This ellipse's major.
+ * \brief   The getter method for `Ellipse :: x`.
+ * \return  This ellipse's x component.
  *
- * Since `major` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `x` is a private attribute, it should be called exclusively using this
+ * method.
  */
 
-inline float Ellipse :: get_major (void)
+inline function <float (const float)> Ellipse :: get_x (void)
 {
-    return this -> major;
+    return this -> x;
 }
 
 /******************************************************************************/

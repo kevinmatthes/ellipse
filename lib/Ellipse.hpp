@@ -104,10 +104,15 @@ class Ellipse
         function <float (const float)>  y;
         function <float (const float)>  z;
 
-        EXPORT  float get_eccentricity  (void);
-        EXPORT  float get_major         (void);
-        EXPORT  float get_minor         (void);
-        EXPORT  float get_radius        (void);
+        EXPORT  float   get_eccentricity    (void);
+        EXPORT  float   get_major           (void);
+        EXPORT  float   get_minor           (void);
+        EXPORT  float   get_radius          (void);
+
+        EXPORT  void    set_eccentricity    (const float eccentricity);
+        EXPORT  void    set_major           (const float major);
+        EXPORT  void    set_minor           (const float minor);
+        EXPORT  void    set_radius          (const float radius);
 
     public:
         EXPORT  Ellipse (void);

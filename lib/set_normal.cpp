@@ -43,12 +43,12 @@
 /**
  * \brief   Reset this ellipse's normal.
  *
- * Set this ellipse's normal to `0.f, 1.f, 0.f`.
+ * Set this ellipse's normal to `0.f, 0.f, 0.f`.
  */
 
 inline void Ellipse :: set_normal (void)
 {
-    this -> set_normal (0.f, 1.f, 0.f);
+    this -> set_normal (0.f, 0.f, 0.f);
     return;
 }
 

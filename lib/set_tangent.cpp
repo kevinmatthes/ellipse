@@ -43,12 +43,12 @@
 /**
  * \brief   Reset this ellipse's tangent.
  *
- * Set this ellipse's tangent to `1.f, 0.f, 0.f`.
+ * Set this ellipse's tangent to `0.f, 0.f, 0.f`.
  */
 
 inline void Ellipse :: set_tangent (void)
 {
-    this -> set_tangent (1.f, 0.f, 0.f);
+    this -> set_tangent (0.f, 0.f, 0.f);
     return;
 }
 

@@ -18,21 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Evaluate curve points for the considered ellipse.
+ * \brief       Initiliase a new ellipse.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        eval.cpp
+ * \file        init.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
- * \sa          Ellipse
  *
- * Since the `Ellipse` class models an ellipse by a parametrisation, it can be
- * evaluated for certain parameter values.  This parameter value needs to be
- * passed to this method, `eval`.
- *
- * Sometimes, the parameter value shall be evaluated with a certain offset.
- * Therefore, this file defines a set of overloads.
+ * This is a private member function in addition to the constructors.  It will
+ * initialise the held vectors.
  */
 
 /******************************************************************************/
@@ -46,53 +41,24 @@
 
 
 /**
- * \brief   Evaluate this ellipse for a certain parameter value.
- * \param   t       The point of time to evaluate this ellipse for.
- * \param   offset  The temporal offset regarding the evaluation.
- * \return  The evaluated curve point.
+ * \brief   Initialise the held vectors.
  *
- * This implementation of the evaluation method takes the point of time for
- * which the considered ellipse shall be evaluated as well as the temporal
- * offset.
- *
- * The point of time to evaluate the ellipse for could be the passed time since
- * the application was started, for instance.  In order to achieve a fixed
- * offset for the evaluation, `offset` can be provided.  In case it should be
- * omitted, another overload for this method is provided whose `offset` is set
- * to zero, by default.
- *
- * The returned curve point is stored as a `std :: vector` which contains the
- * x, y and z coordinates of the determined curve point in this order.
+ * When creating a new ellipse from scratch, the held vectors will not contain
+ * any elements, yet.  In order to avoid unintended side effects from this fact,
+ * this function will assign initial elements to them.
  */
 
-vector <float> Ellipse :: eval (const float t, const float offset)
+void Ellipse :: init (void)
 {
-    vector <float>  ret {};
+    this -> centre  = vector <float> (0x3);
+    this -> normal  = vector <float> (0x3);
+    this -> tangent = vector <float> (0x3);
 
-    ret.push_back (this -> x (t + offset));
-    ret.push_back (this -> y (t + offset));
-    ret.push_back (this -> z (t + offset));
+    this -> set_centre ();
+    this -> set_normal ();
+    this -> set_tangent ();
 
-    return ret;
+    return;
 }
-
-
-
-/**
- * \brief   Evaluate this ellipse without any offset.
- * \param   t   The point of time to evaluate this ellipse for.
- * \return  The evaluated curve point.
- * \sa      eval (const float t, const float offset)
- *
- * This implementation of the evaluation method calls the other one with
- * `offset` being set to zero, by default.  Thus, this method will determine
- * the intended curve point without any offset.
- */
-
-inline vector <float> Ellipse :: eval (const float t)
-{
-    return Ellipse :: eval (t, 0x0);
-}
-
 
 /******************************************************************************/

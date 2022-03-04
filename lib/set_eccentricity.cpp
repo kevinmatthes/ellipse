@@ -42,7 +42,7 @@
 
 /**
  * \brief   The setter method for `Ellipse :: eccentricity`.
- * \return  This ellipse's eccentricity.
+ * \param   eccentricity    This ellipse's eccentricity.
  *
  * Since `eccentricity` is a private attribute, it should be set exclusively
  * using this method.

@@ -42,7 +42,7 @@
 
 /**
  * \brief   The setter method for `Ellipse :: major`.
- * \return  This ellipse's major.
+ * \param   major   This ellipse's major.
  *
  * Since `major` is a private attribute, it should be set exclusively using this
  * method.

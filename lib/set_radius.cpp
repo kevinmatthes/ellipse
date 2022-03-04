@@ -42,7 +42,7 @@
 
 /**
  * \brief   The setter method for `Ellipse :: radius`.
- * \return  This ellipse's radius.
+ * \param   radius  This ellipse's radius.
  *
  * Since `radius` is a private attribute, it should be set exclusively using
  * this method.

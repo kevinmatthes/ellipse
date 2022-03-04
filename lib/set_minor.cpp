@@ -42,7 +42,7 @@
 
 /**
  * \brief   The setter method for `Ellipse :: minor`.
- * \return  This ellipse's minor.
+ * \param   minor   This ellipse's minor.
  *
  * Since `minor` is a private attribute, it should be set exclusively using this
  * method.

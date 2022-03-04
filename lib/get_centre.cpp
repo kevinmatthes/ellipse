@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: radius`.
+ * \brief       The getter for `Ellipse :: centre`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_radius.cpp
+ * \file        get_centre.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `radius` is a private attribute, it should be called exclusively using
+ * Since `centre` is a private attribute, it should be called exclusively using
  * this method.
  */
 
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: radius`.
- * \return  This ellipse's radius.
+ * \brief   The getter method for `Ellipse :: centre`.
+ * \return  This ellipse's centre.
  *
- * Since `radius` is a private attribute, it should be called exclusively using
+ * Since `centre` is a private attribute, it should be called exclusively using
  * this method.
  */
 
-inline float Ellipse :: get_radius (void)
+inline vector <float> Ellipse :: get_centre (void)
 {
-    return this -> radius;
+    return this -> centre;
 }
 
 /******************************************************************************/

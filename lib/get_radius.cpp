@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: major`.
+ * \brief       The getter for `Ellipse :: radius`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_major.cpp
+ * \file        get_radius.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `major` is a private attribute, it should be called exclusively using
+ * Since `radius` is a private attribute, it should be called exclusively using
  * this method.
  */
 
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: major`.
- * \return  This ellipse's major.
+ * \brief   The getter method for `Ellipse :: radius`.
+ * \return  This ellipse's radius.
  *
- * Since `major` is a private attribute, it should be called exclusively using
+ * Since `radius` is a private attribute, it should be called exclusively using
  * this method.
  */
 
-float get_major (void)
+float get_radius (void)
 {
-    return this -> major;
+    return this -> radius;
 }
 
 /******************************************************************************/

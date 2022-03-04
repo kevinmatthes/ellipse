@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: centre`.
+ * \brief       The getter for `Ellipse :: normal`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_centre.cpp
+ * \file        get_normal.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `centre` is a private attribute, it should be called exclusively using
+ * Since `normal` is a private attribute, it should be called exclusively using
  * this method.
  */
 
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: centre`.
- * \return  This ellipse's centre.
+ * \brief   The getter method for `Ellipse :: normal`.
+ * \return  This ellipse's normal.
  *
- * Since `centre` is a private attribute, it should be called exclusively using
+ * Since `normal` is a private attribute, it should be called exclusively using
  * this method.
  */
 
-inline vector <float> Ellipse :: get_centre (void)
+inline vector <float> Ellipse :: get_normal (void)
 {
-    return this -> centre;
+    return this -> normal;
 }
 
 /******************************************************************************/

@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: centre`.
+ * \brief       The getter for `Ellipse :: tangent`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_centre.cpp
+ * \file        get_tangent.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `centre` is a private attribute, it should be called exclusively using
+ * Since `tangent` is a private attribute, it should be called exclusively using
  * this method.
  */
 
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: centre`.
- * \return  This ellipse's centre.
+ * \brief   The getter method for `Ellipse :: tangent`.
+ * \return  This ellipse's tangent.
  *
- * Since `centre` is a private attribute, it should be called exclusively using
+ * Since `tangent` is a private attribute, it should be called exclusively using
  * this method.
  */
 
-inline vector <float> Ellipse :: get_centre (void)
+inline vector <float> Ellipse :: get_tangent (void)
 {
-    return this -> centre;
+    return this -> tangent;
 }
 
 /******************************************************************************/

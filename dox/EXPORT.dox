@@ -32,7 +32,6 @@
 /******************************************************************************/
 
 /*! \def    EXPORT
- *
  * \brief   Symbol export settings for compilation on Windows systems.
  *
  * In order to compile a Dynamic Link Library (DLL) from this source code, the

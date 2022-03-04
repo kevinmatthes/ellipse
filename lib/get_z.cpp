@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: x`.
+ * \brief       The getter for `Ellipse :: z`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_x.cpp
+ * \file        get_z.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `x` is a private attribute, it should be called exclusively using this
+ * Since `z` is a private attribute, it should be called exclusively using this
  * method.
  */
 
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: x`.
- * \return  This ellipse's x component.
+ * \brief   The getter method for `Ellipse :: z`.
+ * \return  This ellipse's z component.
  *
- * Since `x` is a private attribute, it should be called exclusively using this
+ * Since `z` is a private attribute, it should be called exclusively using this
  * method.
  */
 
-inline function <float (const float)> Ellipse :: get_x (void)
+inline function <float (const float)> Ellipse :: get_z (void)
 {
-    return this -> x;
+    return this -> z;
 }
 
 /******************************************************************************/

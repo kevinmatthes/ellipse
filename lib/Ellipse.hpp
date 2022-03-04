@@ -103,6 +103,9 @@ class Ellipse
         function <float (const float)>  x;
         function <float (const float)>  y;
         function <float (const float)>  z;
+        vector <float>                  centre;
+        vector <float>                  normal;
+        vector <float>                  tangent;
 
         EXPORT  float   get_eccentricity    (void);
         EXPORT  float   get_major           (void);

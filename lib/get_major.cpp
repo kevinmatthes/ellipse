@@ -18,16 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: eccentricity`.
+ * \brief       The getter for `Ellipse :: major`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_eccentricity.cpp
+ * \file        get_major.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `eccentricity` is a private attribute, it should be called exclusively
- * using this method.
+ * Since `major` is a private attribute, it should be called exclusively using
+ * this method.
  */
 
 /******************************************************************************/
@@ -41,16 +41,16 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: eccentricity`.
- * \return  This ellipse's eccentricity.
+ * \brief   The getter method for `Ellipse :: major`.
+ * \return  This ellipse's major.
  *
- * Since `eccentricity` is a private attribute, it should be called exclusively
- * using this method.
+ * Since `major` is a private attribute, it should be called exclusively using
+ * this method.
  */
 
-float get_eccentricity (void)
+float get_major (void)
 {
-    return this -> eccentricity;
+    return this -> major;
 }
 
 /******************************************************************************/

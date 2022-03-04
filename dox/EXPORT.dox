@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The docstrings for Doxygen.
+ * \brief       The docstrings for further macros.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        EXPORT.dox
+ * \file        macros.dox
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file documents the macro `EXPORT` of ellipse.hpp.
+ * This file documents miscellaneous macros.
  */
 
 /******************************************************************************/

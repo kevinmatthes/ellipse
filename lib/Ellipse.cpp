@@ -48,7 +48,8 @@
 
 Ellipse :: Ellipse (void)
 {
-    this -> set_centre ();
+    this -> init ();
+
     this -> set_eccentricity ();
     this -> set_major ();
     this -> set_minor ();
@@ -103,7 +104,7 @@ Ellipse :: Ellipse  ( const float r
                     , const float nz
                     )
 {
-    this -> set_centre (cx, cy, cz);
+    this -> init ();
 
     this -> major   = r + e;
     this -> minor   = r;

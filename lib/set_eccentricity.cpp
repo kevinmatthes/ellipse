@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: eccentricity`.
+ * \brief       The setter for `Ellipse :: eccentricity`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_eccentricity.cpp
+ * \file        set_eccentricity.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `eccentricity` is a private attribute, it should be called exclusively
+ * Since `eccentricity` is a private attribute, it should be set exclusively
  * using this method.
  */
 
@@ -41,14 +41,14 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: eccentricity`.
+ * \brief   The setter method for `Ellipse :: eccentricity`.
  * \return  This ellipse's eccentricity.
  *
- * Since `eccentricity` is a private attribute, it should be called exclusively
+ * Since `eccentricity` is a private attribute, it should be set exclusively
  * using this method.
  */
 
-float Ellipse :: get_eccentricity (void)
+float Ellipse :: set_eccentricity (void)
 {
     return this -> eccentricity;
 }

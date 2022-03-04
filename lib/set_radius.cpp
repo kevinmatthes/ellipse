@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: radius`.
+ * \brief       The setter for `Ellipse :: radius`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_radius.cpp
+ * \file        set_radius.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `radius` is a private attribute, it should be called exclusively using
+ * Since `radius` is a private attribute, it should be set exclusively using
  * this method.
  */
 
@@ -41,14 +41,14 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: radius`.
+ * \brief   The setter method for `Ellipse :: radius`.
  * \return  This ellipse's radius.
  *
- * Since `radius` is a private attribute, it should be called exclusively using
+ * Since `radius` is a private attribute, it should be set exclusively using
  * this method.
  */
 
-float Ellipse :: get_radius (void)
+float Ellipse :: set_radius (void)
 {
     return this -> radius;
 }

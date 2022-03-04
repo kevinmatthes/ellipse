@@ -18,16 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: major`.
+ * \brief       The setter for `Ellipse :: major`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_major.cpp
+ * \file        set_major.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `major` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `major` is a private attribute, it should be set exclusively using this
+ * method.
  */
 
 /******************************************************************************/
@@ -41,14 +41,14 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: major`.
+ * \brief   The setter method for `Ellipse :: major`.
  * \return  This ellipse's major.
  *
- * Since `major` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `major` is a private attribute, it should be set exclusively using this
+ * method.
  */
 
-float Ellipse :: get_major (void)
+float Ellipse :: set_major (void)
 {
     return this -> major;
 }

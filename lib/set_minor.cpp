@@ -18,16 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The getter for `Ellipse :: minor`.
+ * \brief       The setter for `Ellipse :: minor`.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        get_minor.cpp
+ * \file        set_minor.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * Since `minor` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `minor` is a private attribute, it should be set exclusively using this
+ * method.
  */
 
 /******************************************************************************/
@@ -41,14 +41,14 @@
 
 
 /**
- * \brief   The getter method for `Ellipse :: minor`.
+ * \brief   The setter method for `Ellipse :: minor`.
  * \return  This ellipse's minor.
  *
- * Since `minor` is a private attribute, it should be called exclusively using
- * this method.
+ * Since `minor` is a private attribute, it should be set exclusively using this
+ * method.
  */
 
-float Ellipse :: get_minor (void)
+float Ellipse :: set_minor (void)
 {
     return this -> minor;
 }

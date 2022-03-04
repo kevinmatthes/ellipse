@@ -110,6 +110,11 @@ class Ellipse
         function <float (const float)>  z
             {[=] (const float t) -> float {return 0.f * t;}};
 
+        EXPORT  float get_eccentricity  (void);
+        EXPORT  float get_major         (void);
+        EXPORT  float get_minor         (void);
+        EXPORT  float get_radius        (void);
+
     public:
         EXPORT  Ellipse ( const float r
                         , const float e

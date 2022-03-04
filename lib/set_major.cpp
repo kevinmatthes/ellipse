@@ -48,9 +48,10 @@
  * method.
  */
 
-float Ellipse :: set_major (void)
+void Ellipse :: set_major (const float major)
 {
-    return this -> major;
+    this -> major = major;
+    return;
 }
 
 /******************************************************************************/

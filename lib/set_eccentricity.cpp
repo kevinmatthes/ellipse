@@ -48,9 +48,10 @@
  * using this method.
  */
 
-float Ellipse :: set_eccentricity (void)
+void Ellipse :: set_eccentricity (const float eccentricity)
 {
-    return this -> eccentricity;
+    this -> eccentricity = eccentricity;
+    return;
 }
 
 /******************************************************************************/

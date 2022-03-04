@@ -48,9 +48,10 @@
  * method.
  */
 
-float Ellipse :: set_minor (void)
+void Ellipse :: set_minor (const float minor)
 {
-    return this -> minor;
+    this -> minor = minor;
+    return;
 }
 
 /******************************************************************************/

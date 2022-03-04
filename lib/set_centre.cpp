@@ -62,6 +62,24 @@ inline void Ellipse :: set_centre (void)
  * this method.
  */
 
+inline void Ellipse :: set_centre (const vector <float> & centre)
+{
+    this -> set_centre (centre[0x0], centre[0x1], centre[0x2]);
+    return;
+}
+
+
+
+/**
+ * \brief   The setter method for `Ellipse :: centre`.
+ * \param   x   This ellipse's centre's x component.
+ * \param   y   This ellipse's centre's y component.
+ * \param   z   This ellipse's centre's z component.
+ *
+ * Since `centre` is a private attribute, it should be set exclusively using
+ * this method.
+ */
+
 inline void Ellipse :: set_centre (const float x, const float y, const float z)
 {
     this -> centre[0x0] = x;

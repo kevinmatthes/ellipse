@@ -111,12 +111,16 @@ class Ellipse
 
         EXPORT  void    set_eccentricity    (void);
         EXPORT  void    set_eccentricity    (const float eccentricity);
-        EXPORT  void    set_major           (void);
-        EXPORT  void    set_major           (const float major);
-        EXPORT  void    set_minor           (void);
-        EXPORT  void    set_minor           (const float minor);
-        EXPORT  void    set_radius          (void);
-        EXPORT  void    set_radius          (const float radius);
+
+        EXPORT  void    set_major   (void);
+        EXPORT  void    set_major   (const float major);
+
+        EXPORT  void    set_minor   (void);
+        EXPORT  void    set_minor   (const float minor);
+
+        EXPORT  void    set_radius  (void);
+        EXPORT  void    set_radius  (const float radius);
+
 
     public:
         EXPORT  Ellipse (void);

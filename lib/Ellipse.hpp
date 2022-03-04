@@ -107,6 +107,8 @@ class Ellipse
         vector <float>                  normal;
         vector <float>                  tangent;
 
+        EXPORT  void    init    (void);
+
     public:
         EXPORT  Ellipse (void);
         EXPORT  Ellipse ( const float r

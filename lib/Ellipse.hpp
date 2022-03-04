@@ -107,10 +107,16 @@ class Ellipse
         vector <float>                  normal;
         vector <float>                  tangent;
 
-        EXPORT  float   get_eccentricity    (void);
-        EXPORT  float   get_major           (void);
-        EXPORT  float   get_minor           (void);
-        EXPORT  float   get_radius          (void);
+        EXPORT  float                           get_eccentricity    (void);
+        EXPORT  float                           get_major           (void);
+        EXPORT  float                           get_minor           (void);
+        EXPORT  float                           get_radius          (void);
+        EXPORT  function <float (const float)>  get_x               (void);
+        EXPORT  function <float (const float)>  get_y               (void);
+        EXPORT  function <float (const float)>  get_z               (void);
+        EXPORT  vector <float>                  get_centre          (void);
+        EXPORT  vector <float>                  get_normal          (void);
+        EXPORT  vector <float>                  get_tangent         (void);
 
         EXPORT  void    set_eccentricity    (void);
         EXPORT  void    set_eccentricity    (const float eccentricity);

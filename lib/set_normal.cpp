@@ -62,7 +62,7 @@ inline void Ellipse :: set_normal (void)
  * this method.
  */
 
-void Ellipse :: set_normal (const vector <float> & normal)
+inline void Ellipse :: set_normal (const vector <float> & normal)
 {
     switch (normal.size ())
     {

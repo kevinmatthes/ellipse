@@ -62,7 +62,7 @@ inline void Ellipse :: set_tangent (void)
  * this method.
  */
 
-void Ellipse :: set_tangent (const vector <float> & tangent)
+inline void Ellipse :: set_tangent (const vector <float> & tangent)
 {
     switch (tangent.size ())
     {

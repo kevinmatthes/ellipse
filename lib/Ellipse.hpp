@@ -133,38 +133,32 @@ class Ellipse
         EXPORT  vector <float>                  get_normal          (void);
         EXPORT  vector <float>                  get_tangent         (void);
 
-        EXPORT  void    set_centre  (void);
-        EXPORT  void    set_centre  (const vector <float> & centre);
-        EXPORT  void    set_centre  ( const float x
-                                    , const float y
-                                    , const float z
-                                    );
-
+        EXPORT  void    set_centre          (void);
+        EXPORT  void    set_centre          (const vector <float> & centre);
+        EXPORT  void    set_centre          ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
         EXPORT  void    set_eccentricity    (void);
         EXPORT  void    set_eccentricity    (const float eccentricity);
-
-        EXPORT  void    set_major   (void);
-        EXPORT  void    set_major   (const float major);
-
-        EXPORT  void    set_minor   (void);
-        EXPORT  void    set_minor   (const float minor);
-
-        EXPORT  void    set_normal  (void);
-        EXPORT  void    set_normal  (const vector <float> & normal);
-        EXPORT  void    set_normal  ( const float x
-                                    , const float y
-                                    , const float z
-                                    );
-
-        EXPORT  void    set_radius  (void);
-        EXPORT  void    set_radius  (const float radius);
-
-        EXPORT  void    set_tangent (void);
-        EXPORT  void    set_tangent (const vector <float> & tangent);
-        EXPORT  void    set_tangent ( const float x
-                                    , const float y
-                                    , const float z
-                                    );
+        EXPORT  void    set_major           (void);
+        EXPORT  void    set_major           (const float major);
+        EXPORT  void    set_minor           (void);
+        EXPORT  void    set_minor           (const float minor);
+        EXPORT  void    set_normal          (void);
+        EXPORT  void    set_normal          (const vector <float> & normal);
+        EXPORT  void    set_normal          ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
+        EXPORT  void    set_radius          (void);
+        EXPORT  void    set_radius          (const float radius);
+        EXPORT  void    set_tangent         (void);
+        EXPORT  void    set_tangent         (const vector <float> & tangent);
+        EXPORT  void    set_tangent         ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
 
         EXPORT  vector <float> eval (const float t, const float offset);
         EXPORT  vector <float> eval (const float t);

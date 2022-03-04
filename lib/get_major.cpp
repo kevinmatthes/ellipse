@@ -48,7 +48,7 @@
  * this method.
  */
 
-float get_major (void)
+float Ellipse :: get_major (void)
 {
     return this -> major;
 }

@@ -48,7 +48,7 @@
  * this method.
  */
 
-float get_minor (void)
+float Ellipse :: get_minor (void)
 {
     return this -> minor;
 }

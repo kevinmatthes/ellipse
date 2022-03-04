@@ -48,7 +48,7 @@
  * using this method.
  */
 
-float get_eccentricity (void)
+float Ellipse :: get_eccentricity (void)
 {
     return this -> eccentricity;
 }

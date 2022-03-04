@@ -18,26 +18,27 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The docstrings for Doxygen.
+ * \brief       The docstrings for include macros.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        __ELLIPSE_HPP__.dox
+ * \file        pragma_once.dox
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file documents the macro `__ELLIPSE_HPP__` of ellipse.hpp.
+ * This file provides the documentation information regarding the macros which
+ * shall prevent their headers from being included multiple times in addition to
+ * the `pragma` instruction `once`.
  */
 
 /******************************************************************************/
 
 /*! \def    __ELLIPSE_HPP__
+ * \brief   Prevent this header from being included twice.
  *
- * \brief   Ensuring this header being included just once.
- *
- * In order to prevent unintended side effects when including this header
- * mulitple times, this define is utilised such that this header is included at
- * most once.
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
  */
 
 /******************************************************************************/

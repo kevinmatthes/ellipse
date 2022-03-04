@@ -48,7 +48,7 @@
  * this method.
  */
 
-float Ellipse :: get_radius (void)
+inline float Ellipse :: get_radius (void)
 {
     return this -> radius;
 }

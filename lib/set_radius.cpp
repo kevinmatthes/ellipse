@@ -48,7 +48,7 @@
  * this method.
  */
 
-void Ellipse :: set_radius (const float radius)
+inline void Ellipse :: set_radius (const float radius)
 {
     this -> radius = radius;
     return;

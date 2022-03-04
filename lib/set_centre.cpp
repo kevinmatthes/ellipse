@@ -43,12 +43,12 @@
 /**
  * \brief   Reset this ellipse's centre.
  *
- * Set this ellipse's centre to `0.f`.
+ * Set this ellipse's centre to `0.f, 0.f, 0.f`.
  */
 
 inline void Ellipse :: set_centre (void)
 {
-    this -> set_centre (0.f);
+    this -> set_centre (0.f, 0.f, 0.f);
     return;
 }
 
@@ -62,9 +62,11 @@ inline void Ellipse :: set_centre (void)
  * this method.
  */
 
-inline void Ellipse :: set_centre (const float centre)
+inline void Ellipse :: set_centre (const float x, const float y, const float z)
 {
-    this -> centre = centre;
+    this -> centre[0x0] = x;
+    this -> centre[0x1] = y;
+    this -> centre[0x2] = z;
     return;
 }
 

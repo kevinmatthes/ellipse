@@ -40,6 +40,10 @@
 
 
 /**
+ * \brief   The default constructor.
+ *
+ * This constructor will create an empty ellipse which contains just default
+ * values.
  */
 
 Ellipse :: Ellipse (void)

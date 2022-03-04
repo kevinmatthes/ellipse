@@ -130,6 +130,13 @@ class Ellipse
         EXPORT  void    set_radius  (void);
         EXPORT  void    set_radius  (const float radius);
 
+        EXPORT  void    set_centre  (void);
+        EXPORT  void    set_centre  (const vector <float> & centre);
+        EXPORT  void    set_centre  ( const float x
+                                    , const float y
+                                    , const float z
+                                    );
+
 
     public:
         EXPORT  Ellipse (void);

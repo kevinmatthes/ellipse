@@ -107,6 +107,7 @@ class Ellipse
         vector <float>                  normal;
         vector <float>                  tangent;
 
+    public:
         EXPORT  float                           get_eccentricity    (void);
         EXPORT  float                           get_major           (void);
         EXPORT  float                           get_minor           (void);
@@ -151,8 +152,6 @@ class Ellipse
                                     , const float z
                                     );
 
-
-    public:
         EXPORT  Ellipse (void);
         EXPORT  Ellipse ( const float r
                         , const float e

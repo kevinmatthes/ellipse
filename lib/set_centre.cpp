@@ -62,9 +62,27 @@ inline void Ellipse :: set_centre (void)
  * this method.
  */
 
-inline void Ellipse :: set_centre (const vector <float> & centre)
+void Ellipse :: set_centre (const vector <float> & centre)
 {
-    this -> set_centre (centre[0x0], centre[0x1], centre[0x2]);
+    switch (centre.size ())
+    {
+        case 0x0:
+            this -> set_centre ();
+            break;
+
+        case 0x1:
+            this -> set_centre (centre[0x0], 0.f, 0.f);
+            break;
+
+        case 0x2:
+            this -> set_centre (centre[0x0], centre[0x1], 0.f);
+            break;
+
+        default:
+            this -> set_centre (centre[0x0], centre[0x1], centre[0x2]);
+            break;
+    };
+
     return;
 }
 

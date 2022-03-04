@@ -45,8 +45,6 @@
 
 A simpe C++ library for ellipses.
 
-
-
 ## License
 
 This project's license is **GPL 2** (as of June 1991).  The whole license text

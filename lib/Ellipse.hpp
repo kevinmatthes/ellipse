@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Introducing the `Ellipse' class.
+ * \brief       Introducing the `Ellipse` class.
  * \copyright   (C) 2021--2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2021--2022

@@ -48,10 +48,10 @@
 
 Ellipse :: Ellipse (void)
 {
-    this -> eccentricity    = 0.f;
-    this -> major           = 0.f;
-    this -> minor           = 0.f;
-    this -> radius          = 0.f;
+    this -> set_eccentricity ();
+    this -> set_major ();
+    this -> set_minor ();
+    this -> set_radius ();
 
     this -> x   = {[=] (const float t) -> float {return cos (t);}};
     this -> y   = {[=] (const float t) -> float {return sin (t);}};

@@ -40,6 +40,31 @@
 
 
 /**
+ * \brief   The default constructor.
+ *
+ * This constructor will create an empty ellipse which contains just default
+ * values.
+ */
+
+Ellipse :: Ellipse (void)
+{
+    this -> init ();
+
+    this -> set_eccentricity ();
+    this -> set_major ();
+    this -> set_minor ();
+    this -> set_radius ();
+
+    this -> x   = {[=] (const float t) -> float {return cos (t);}};
+    this -> y   = {[=] (const float t) -> float {return sin (t);}};
+    this -> z   = {[=] (const float t) -> float {return 0.f * t;}};
+
+    return;
+}
+
+
+
+/**
  * \brief   Construct a new `Ellipse` instance from the given data.
  * \param   r   The radius.
  * \param   e   The eccentricity.
@@ -79,6 +104,8 @@ Ellipse :: Ellipse  ( const float r
                     , const float nz
                     )
 {
+    this -> init ();
+
     this -> major   = r + e;
     this -> minor   = r;
 
@@ -98,7 +125,7 @@ Ellipse :: Ellipse  ( const float r
 
     this -> x   = [=] (const float t) -> float {return major * cos (t);};
     this -> y   = [=] (const float t) -> float {return minor * sin (t);};
-    this -> z   = [=] (const float t) -> float {return 0x0 * t;};
+    this -> z   = [=] (const float t) -> float {return 0.f * t;};
 
     return;
 

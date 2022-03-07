@@ -18,28 +18,27 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The docstrings for Doxygen.
+ * \brief       The docstrings for include macros.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        EXPORT.dox
+ * \file        pragma_once.dox
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file documents the macro `EXPORT` of ellipse.hpp.
+ * This file provides the documentation information regarding the macros which
+ * shall prevent their headers from being included multiple times in addition to
+ * the `pragma` instruction `once`.
  */
 
 /******************************************************************************/
 
-/*! \def    EXPORT
+/*! \def    __ELLIPSE_HPP__
+ * \brief   Prevent this header from being included twice.
  *
- * \brief   Symbol export settings for compilation on Windows systems.
- *
- * In order to compile a Dynamic Link Library (DLL) from this source code, the
- * symbols to export are to tag accordingly.  Since this affects only Windows
- * machines, the settings are implemented as preprocessor defines such that they
- * can be passed to the compiler on demand and depending on the used operating
- * system.
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
  */
 
 /******************************************************************************/

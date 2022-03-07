@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      g++-objects.m
+%%      clean-documentation.m
 %%
 %%  BRIEF
-%%      Create object files from C++ source code using `g++`.
+%%      Remove the automatically compiled documentation.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -46,26 +46,22 @@
 %%
 %%%%
 
-% Software.
-software.compiler.self  = ' g++ ';
-software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c++11 -c ';
-software.compiler.call  = [software.compiler.self software.compiler.flags];
+% Doxygen settings.
+doxygen.outdir  = '';
+
+doxygen.html.search = [doxygen.outdir 'html/search/'];
+doxygen.html.self   = [doxygen.outdir 'html/'];
+doxygen.latex.self  = [doxygen.outdir 'latex/'];
 
 
 
 % Files.
-files.self      = ' g++-objects.m ';
-files.source    = ' *.cpp ';
+files.self  = 'clean-documentation.m';
 
 
 
 % Control flow.
-banner  = ['[' files.self '] '];
-
-
-
-% Call adjustment.
-software.compiler.call  = [software.compiler.call files.source];
+banner  = ['[ ' files.self ' ] '];
 
 
 
@@ -80,13 +76,34 @@ disp ([banner 'Begin build instruction.']);
 
 
 
-% Call C++ compiler.
-disp ([banner 'Compile object files ...']);
+% Remove common Doxygen directories.
+fprintf ([banner 'Check for and remove Doxygen directories ... ']);
 
-disp (software.compiler.call);
-system (software.compiler.call);
+if length (glob (doxygen.html.search));
+    if length (glob ([doxygen.html.search '*']));
+        delete ([doxygen.html.search '*']);
+    end;
 
-disp ([banner 'Done.']);
+    rmdir (doxygen.html.search);
+end;
+
+if length (glob (doxygen.html.self));
+    if length (glob ([doxygen.html.self '*']));
+        delete ([doxygen.html.self '*']);
+    end;
+
+    rmdir (doxygen.html.self);
+end;
+
+if length (glob (doxygen.latex.self));
+    if length (glob ([doxygen.latex.self '*']));
+        delete ([doxygen.latex.self '*']);
+    end;
+
+    rmdir (doxygen.latex.self);
+end;
+
+disp ('Done.');
 
 
 

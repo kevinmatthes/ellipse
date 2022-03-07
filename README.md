@@ -45,15 +45,13 @@
 
 A simpe C++ library for ellipses.
 
-
-
 ## License
 
 This project's license is **GPL 2** (as of June 1991).  The whole license text
 can be found in `LICENSE` in the main directory of this repository.  The brief
 version is as follows:
 
-> Copyright (C) 2021─2022 Kevin Matthes
+> Copyright (C) 2021--2022 Kevin Matthes
 >
 > This program is free software; you can redistribute it and/or modify
 > it under the terms of the GNU General Public License as published by
@@ -72,5 +70,31 @@ version is as follows:
 When compiling a printable version of this documentation using Pandoc, the full
 license will be attached automatically to the resulting document.  This can be
 invoked by calling `repository-manual.m`.
+
+The compilation of such an **optional** repository manual can be invoked by just
+calling one of the following lines in a terminal.
+
+```
+octave repository-manual.m
+octave-cli repository-manual.m
+```
+
+Both will redirect to the same application, GNU Octave, which will then create
+the manual for this repository and attach the entire license to it.  The
+resulting file, `repository.pdf`, will be saved in the main directory of this
+repository.
+
+## Software Requirements
+
+| Requirement       | Type          | Role                                  |
+|:------------------|:-------------:|:--------------------------------------|
+| `ar`              | application   | create and update static libraries    |
+| `docs-snippets`   | repository    | documentation constants               |
+| Doxygen           | application   | creation of source code documentation |
+| `g++`             | application   | C++ compiler                          |
+| GNU Octave        | application   | execution of the provided scripts     |
+| `make`            | application   | finalisation of Doxygen documentation |
+| Pandoc            | application   | compilation of repository manual      |
+| `texlive-full`    | package       | compilation of repository manual      |
 
 <!----------------------------------------------------------------------------->

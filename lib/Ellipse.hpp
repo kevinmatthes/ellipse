@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Introducing the `Ellipse' class.
+ * \brief       Introducing the `Ellipse` class.
  * \copyright   (C) 2021--2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2021--2022
@@ -96,19 +96,21 @@ using std :: vector;
 class Ellipse
 {
     private:
-        float   major   {0.};
-        float   minor   {0.};
+        float                           eccentricity;
+        float                           major;
+        float                           minor;
+        float                           radius;
+        function <float (const float)>  x;
+        function <float (const float)>  y;
+        function <float (const float)>  z;
+        vector <float>                  centre;
+        vector <float>                  normal;
+        vector <float>                  tangent;
 
-        function <float (const float)>  x
-            {[=] (const float t) -> float {return cos (t);}};
-
-        function <float (const float)>  y
-            {[=] (const float t) -> float {return sin (t);}};
-
-        function <float (const float)>  z
-            {[=] (const float t) -> float {return 0.f * t;}};
+        EXPORT  void    init    (void);
 
     public:
+        EXPORT  Ellipse (void);
         EXPORT  Ellipse ( const float r
                         , const float e
                         , const float cx
@@ -121,6 +123,44 @@ class Ellipse
                         , const float ny
                         , const float nz
                         );
+
+        EXPORT  float                           get_eccentricity    (void);
+        EXPORT  float                           get_major           (void);
+        EXPORT  float                           get_minor           (void);
+        EXPORT  float                           get_radius          (void);
+        EXPORT  function <float (const float)>  get_x               (void);
+        EXPORT  function <float (const float)>  get_y               (void);
+        EXPORT  function <float (const float)>  get_z               (void);
+        EXPORT  vector <float>                  get_centre          (void);
+        EXPORT  vector <float>                  get_normal          (void);
+        EXPORT  vector <float>                  get_tangent         (void);
+
+        EXPORT  void    set_centre          (void);
+        EXPORT  void    set_centre          (const vector <float> & centre);
+        EXPORT  void    set_centre          ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
+        EXPORT  void    set_eccentricity    (void);
+        EXPORT  void    set_eccentricity    (const float eccentricity);
+        EXPORT  void    set_major           (void);
+        EXPORT  void    set_major           (const float major);
+        EXPORT  void    set_minor           (void);
+        EXPORT  void    set_minor           (const float minor);
+        EXPORT  void    set_normal          (void);
+        EXPORT  void    set_normal          (const vector <float> & normal);
+        EXPORT  void    set_normal          ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
+        EXPORT  void    set_radius          (void);
+        EXPORT  void    set_radius          (const float radius);
+        EXPORT  void    set_tangent         (void);
+        EXPORT  void    set_tangent         (const vector <float> & tangent);
+        EXPORT  void    set_tangent         ( const float x
+                                            , const float y
+                                            , const float z
+                                            );
 
         EXPORT  vector <float> eval (const float t, const float offset);
         EXPORT  vector <float> eval (const float t);

@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      g++-objects.m
+%%      clean-manuals.m
 %%
 %%  BRIEF
-%%      Create object files from C++ source code using `g++`.
+%%      Remove compiled manuals.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -46,26 +46,15 @@
 %%
 %%%%
 
-% Software.
-software.compiler.self  = ' g++ ';
-software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c++11 -c ';
-software.compiler.call  = [software.compiler.self software.compiler.flags];
-
-
-
 % Files.
-files.self      = ' g++-objects.m ';
-files.source    = ' *.cpp ';
+files.self  = 'clean-manuals.m';
+
+files.types.pdf = '*.pdf';
 
 
 
 % Control flow.
-banner  = ['[' files.self '] '];
-
-
-
-% Call adjustment.
-software.compiler.call  = [software.compiler.call files.source];
+banner  = ['[ ' files.self ' ] '];
 
 
 
@@ -80,13 +69,21 @@ disp ([banner 'Begin build instruction.']);
 
 
 
-% Call C++ compiler.
-disp ([banner 'Compile object files ...']);
+% Check for and remove manuals.
+fprintf ([banner 'Check for manuals ... ']);
 
-disp (software.compiler.call);
-system (software.compiler.call);
+count.pdf   = length (glob (files.types.pdf));
 
-disp ([banner 'Done.']);
+if count.pdf;
+    fprintf ('%d found.\n', count.pdf);
+    fprintf ([banner 'Remove those ... ']);
+
+    if count.pdf;   delete (files.types.pdf);   end;
+
+    disp ('Done.');
+else;
+    disp ('There are no manuals.');
+end;
 
 
 

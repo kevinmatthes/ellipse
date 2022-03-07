@@ -25,7 +25,6 @@
  * \file        eval.cpp
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
- * \sa          Ellipse
  *
  * Since the `Ellipse` class models an ellipse by a parametrisation, it can be
  * evaluated for certain parameter values.  This parameter value needs to be
@@ -82,7 +81,6 @@ vector <float> Ellipse :: eval (const float t, const float offset)
  * \brief   Evaluate this ellipse without any offset.
  * \param   t   The point of time to evaluate this ellipse for.
  * \return  The evaluated curve point.
- * \sa      eval (const float t, const float offset)
  *
  * This implementation of the evaluation method calls the other one with
  * `offset` being set to zero, by default.  Thus, this method will determine

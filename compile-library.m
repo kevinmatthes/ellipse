@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      g++-objects.m
+%%      compile-library.m
 %%
 %%  BRIEF
-%%      Create object files from C++ source code using `g++`.
+%%      Create the main library of this repository.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -47,25 +47,26 @@
 %%%%
 
 % Software.
-software.compiler.self  = ' g++ ';
-software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c++11 -c ';
-software.compiler.call  = [software.compiler.self software.compiler.flags];
+octave.self = 'octave';
+
+
+
+% Directories.
+directories.lib = './lib/';
 
 
 
 % Files.
-files.self      = ' g++-objects.m ';
-files.source    = ' *.cpp ';
+files.mklib = 'ar-create.m';
+files.mkobj = 'g++-objects.m';
+files.rmlib = 'clean-libraries.m';
+files.rmobj = 'clean-objects.m';
+files.self  = 'compile-library.m';
 
 
 
 % Control flow.
-banner  = ['[' files.self '] '];
-
-
-
-% Call adjustment.
-software.compiler.call  = [software.compiler.call files.source];
+banner  = ['[ ' files.self ' ] '];
 
 
 
@@ -80,13 +81,18 @@ disp ([banner 'Begin build instruction.']);
 
 
 
-% Call C++ compiler.
-disp ([banner 'Compile object files ...']);
+% Adjust working directory.
+fprintf ([banner 'Set working directory to ' directories.lib ' ... ']);
+cd (directories.lib);
+disp ('Done.');
 
-disp (software.compiler.call);
-system (software.compiler.call);
 
-disp ([banner 'Done.']);
+
+% Process build instructions.
+system ([octave.self ' ' files.rmlib]);
+system ([octave.self ' ' files.mkobj]);
+system ([octave.self ' ' files.mklib]);
+system ([octave.self ' ' files.rmobj]);
 
 
 

@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      g++-objects.m
+%%      doxygen.m
 %%
 %%  BRIEF
-%%      Create object files from C++ source code using `g++`.
+%%      Create a complete documentation from sources using `doxygen`.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -47,25 +47,38 @@
 %%%%
 
 % Software.
-software.compiler.self  = ' g++ ';
-software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c++11 -c ';
-software.compiler.call  = [software.compiler.self software.compiler.flags];
+software.compiler.self  = ' doxygen ';
+
+software.make.self  = ' make ';
+software.make.flags = ' -C ';
+software.make.call  = [software.make.self software.make.flags];
+
+
+
+% Directories.
+directories.doxygen.make    = './latex/';
 
 
 
 % Files.
-files.self      = ' g++-objects.m ';
-files.source    = ' *.cpp ';
+files.refman.pdf    = [directories.doxygen.make 'refman.pdf'];
+files.refman.tex    = [directories.doxygen.make 'refman.tex'];
+
+files.self      = 'doxygen.m';
+files.source    = 'ellipse.doxygen.cfg';
+files.target    = 'ellipse.pdf';
 
 
 
 % Control flow.
-banner  = ['[' files.self '] '];
+banner  = ['[ ' files.self ' ] '];
 
 
 
 % Call adjustment.
-software.compiler.call  = [software.compiler.call files.source];
+software.compiler.call  = [software.compiler.self files.source];
+
+software.make.call  = [software.make.call directories.doxygen.make];
 
 
 
@@ -80,13 +93,29 @@ disp ([banner 'Begin build instruction.']);
 
 
 
-% Call C++ compiler.
-disp ([banner 'Compile object files ...']);
+% Call Doxygen.
+disp ([banner 'Compile Doxygen documentation ...']);
 
 disp (software.compiler.call);
-system (software.compiler.call);
+software.compiler.result = system (software.compiler.call);
 
 disp ([banner 'Done.']);
+
+
+
+% Compile LaTeX manual, if possible.
+if ~ software.compiler.result && length (glob (files.refman.tex)) && isunix;
+    disp ([banner 'Compile LaTeX manual ...']);
+
+    disp (software.make.call);
+    unix (software.make.call);
+
+    if length (glob (files.refman.pdf));
+        movefile (files.refman.pdf, files.target, 'f');
+    end;
+
+    disp ([banner 'Done.']);
+end;
 
 
 
